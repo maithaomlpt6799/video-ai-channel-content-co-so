@@ -12,7 +12,7 @@ version:
 ---
 # CCS-000 — (tiêu đề)
 
-Bước: 0_lich · 1_research · 2_suon · 3_kich_ban · 4_the_hien · 5_dung · 5b_feedback · 6_caption · 7_dang · XONG
+Bước: 0_lich · 1_research · 2_suon · 3_kich_ban · 4_the_hien · 5_dung · 5b_feedback · 6_caption · 7_dang · 8_do · XONG
 
 ## Duyệt (chỉ ghi khi CEO nói trực tiếp — ghi nguyên văn)
 | Điểm duyệt | Kết quả | Lời CEO | Thời gian |
