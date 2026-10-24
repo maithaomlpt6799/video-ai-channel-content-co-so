@@ -2,8 +2,8 @@
 id: T_20261024_kien_thuc_content
 tieu_de: Đọc folder kiến thức content của CEO → tóm tắt cho cả phòng
 giao_boi: CEO (qua Claude/Manager)
-nguoi_giu: Claude/Research
-trang_thai: DANG_LAM
+nguoi_giu: CEO
+trang_thai: CHO_CEO
 han: 2026-10-30
 ---
 # Đọc folder kiến thức content của CEO → tóm tắt cho cả phòng
@@ -22,6 +22,8 @@ https://drive.google.com/drive/folders/1QLj8lh4C7_z1_MGd9gHrR2qaCmYBoIbd?usp=sha
 ## Đầu ra
 | File / link | Ghi chú |
 | --- | --- |
+| `02_research/20261024_kien_thuc_content_ceo.md` | Tóm tắt 8 tài liệu (169 trang), áp dụng theo vai, bảng số liệu theo luật 1–5, 7 đề xuất chờ CEO |
+| https://drive.google.com/drive/folders/1QLj8lh4C7_z1_MGd9gHrR2qaCmYBoIbd | Folder nguồn "Content MKT" |
 
 ## Duyệt (chỉ ghi khi CEO nói trực tiếp)
 | Kết quả | Lời CEO | Thời gian |
@@ -33,3 +35,4 @@ https://drive.google.com/drive/folders/1QLj8lh4C7_z1_MGd9gHrR2qaCmYBoIbd?usp=sha
 - 2026-10-24 22:13 | Claude/Manager | Tạo thẻ theo tin CEO gửi folder kiến thức. Hạn chờ CEO.
 - 2026-10-24 22:14 | Claude/Manager | Theo lệnh CEO: đặt hạn 2026-10-30.
 - 2026-10-24 22:15 | Claude/Research | CHUA_LAM -> DANG_LAM | Bắt đầu đọc folder Drive.
+- 2026-10-24 22:29 | Claude/Research | DANG_LAM -> CHO_CEO | Xong file tóm tắt; chờ CEO xem và quyết mục 6 Đề xuất.

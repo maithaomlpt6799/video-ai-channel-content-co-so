@@ -17,3 +17,5 @@
 2026-10-24 22:20 | Claude/Creative | CCS-001 | — | Theo lệnh CEO: concept bản ghi lại videos/CCS-001/03_creative/concept.md + mockup/ (4 ảnh từ bản v2). Chờ CEO duyệt concept
 2026-10-24 22:20 | Claude/Creative | T_20261024_moodboard_collage | — -> CHUA_LAM | Tạo thẻ theo lệnh CEO; chờ file mascot Bé Tiền Tít, hạn, phạm vi
 2026-10-24 22:27 | Claude/Manager | — | — | Giải nén ccs_v1-7.zip theo lệnh CEO: AGENTS.md, 00_ceo/channel_bible.md, vai/codex_review.md, claude_creative.md, claude_video.md. Lệnh xoá 04_creative/thu_vien/mascot/NGUON.md: không có file này, không xoá gì
+2026-10-24 22:29 | Claude/Research | T_20261024_kien_thuc_content | DANG_LAM -> CHO_CEO | Tóm tắt kiến thức content CEO xong: 02_research/20261024_kien_thuc_content_ceo.md
+2026-10-24 22:29 | Claude/Manager | — | — | Giải nén ccs_mascot.zip: thêm 04_creative/thu_vien/mascot/be_tien_tit_sheet.png. Giữ channel_bible.md v1.7 (bản trong zip cũ hơn, còn dòng luật 8 đã bỏ). Không giữ NGUON.md theo lệnh xoá trực tiếp của CEO trước đó
