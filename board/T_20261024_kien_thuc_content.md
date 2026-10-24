@@ -24,10 +24,12 @@ https://drive.google.com/drive/folders/1QLj8lh4C7_z1_MGd9gHrR2qaCmYBoIbd?usp=sha
 | --- | --- |
 | `02_research/20261024_kien_thuc_content_ceo.md` | Tóm tắt 8 tài liệu (169 trang), áp dụng theo vai, bảng số liệu theo luật 1–5, 7 đề xuất chờ CEO |
 | https://drive.google.com/drive/folders/1QLj8lh4C7_z1_MGd9gHrR2qaCmYBoIbd | Folder nguồn "Content MKT" |
+| `00_ceo/tham_khao/kien_thuc_content_nguyen_tac.md` | Mục 6 + thư viện hook / stimulus / 9 thiên kiến / 8 lỗi ad, chép theo lệnh CEO |
 
 ## Duyệt (chỉ ghi khi CEO nói trực tiếp)
 | Kết quả | Lời CEO | Thời gian |
 | --- | --- | --- |
+| Chép mục 6 Đề xuất vào tham_khao | "mục 6 chép vào đây đi 00_ceo/tham_khao/" — lời trực tiếp trong phiên Research | 2026-10-24 22:38 |
 
 ## Nhắc (chỉ thêm dòng)
 
@@ -36,3 +38,4 @@ https://drive.google.com/drive/folders/1QLj8lh4C7_z1_MGd9gHrR2qaCmYBoIbd?usp=sha
 - 2026-10-24 22:14 | Claude/Manager | Theo lệnh CEO: đặt hạn 2026-10-30.
 - 2026-10-24 22:15 | Claude/Research | CHUA_LAM -> DANG_LAM | Bắt đầu đọc folder Drive.
 - 2026-10-24 22:29 | Claude/Research | DANG_LAM -> CHO_CEO | Xong file tóm tắt; chờ CEO xem và quyết mục 6 Đề xuất.
+- 2026-10-24 22:38 | Claude/Research | CHO_CEO | Theo lệnh CEO: chép mục 6 vào 00_ceo/tham_khao/kien_thuc_content_nguyen_tac.md.

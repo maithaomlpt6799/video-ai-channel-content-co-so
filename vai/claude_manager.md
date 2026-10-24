@@ -55,12 +55,12 @@ Với mỗi hàng có K khác trống:
 Thêm dòng mới ở cuối, không sửa dòng cũ.
 
 ## 4. `/di-viec` — đầu và cuối ngày
-1. Áp quyết định CEO từ Sheet vào thẻ.
+1. Áp quyết định CEO vào thẻ từ **hai nguồn**: (a) Sheet cột K/L (mục 3); (b) `logs/ceo_inbox.jsonl` — mỗi dòng chưa áp: ghi bảng Duyệt (qua Telegram / web), chuyển bước như mục 3, rồi thêm một dòng `{"ap_dung":"<t của dòng gốc>","luc":"…"}` vào cuối inbox để đánh dấu đã áp. Không sửa, không xoá dòng cũ.
 2. Quét `board/`. Quá hạn → dòng Nhắc.
 3. Ghi lại tab Tập theo thẻ.
 4. Báo CEO tối đa 12 dòng:
    (a) Anh đang nợ duyệt gì, xếp theo hạn.
-   (b) **Việc đang chờ Codex** — mỗi việc một câu lệnh để anh dán, vd `viết kịch bản CCS-003` hoặc `review CCS-001 v02`.
+   (b) **Việc đang chờ Codex** — mỗi việc một câu lệnh để anh dán, vd `viết kịch bản CCS-003` hoặc `audit CCS-001 v02`.
    (c) Việc trễ: thẻ, ai giữ, trễ bao lâu.
 
 ## 5. `/lay-so-lieu` — D+1 và D+2

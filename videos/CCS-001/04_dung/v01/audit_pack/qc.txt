@@ -1,0 +1,22 @@
+QC — CCS-001 v01 · 24/10/2026 · Claude/Video
+
+KỸ THUẬT (đo bằng ffprobe / loudnorm)
+- 1080x1920, 30 fps, H.264 + AAC 48 kHz stereo 192k
+- Dài 42,70 s (1278 frame). Bản v2 cũ: 45,5 s
+- Loudness tích hợp -14,14 LUFS · true peak -1,77 dBTP · LRA 2,0 (đích -14 LUFS / -1,5 dBTP)
+
+GIỌNG
+- Speko Harper (vi-VN-Harper:MAI-Voice-2.1), dùng lại 11 đoạn của v2 (hookB + s1, s2, s3k, p2a–p2e, s5bk, p3), tăng tốc thêm x1,05 (atempo, giữ cao độ). Không tạo giọng mới trên Speko
+- Lời transcribe từ giọng thật (ElevenLabs Scribe) khớp lời bảng 2.2 bàn giao + hook B, không thiếu/thừa câu. Scribe ghi dấu "." ở vài chỗ đọc là câu hỏi ("Bí ý tưởng content?", "nổi bật?") — chỉ là dấu câu của máy, không phải giọng sai [chưa chắc: Claude không nghe được audio]
+- Khoảng lặng giữa các đoạn rút theo x1,05; nhạc nền tự hạ khi có lời (giữ từ v2)
+
+HÌNH — đã xem 9 ảnh giữa cảnh + 4 still ở các lần mascot xuất hiện
+- Bé Tiền Tít xuất hiện 3 lần: S03 Judge, S08 Celebrate (góc trên phải, cạnh "1 SẢN PHẨM"), S09 Idea. Pose cắt từ file gốc, không đổi tạo hình, thêm viền sticker trắng + bóng cứng
+- S08: lần đầu đặt Celebrate đè lên dấu FIX và đầu vé công thức → đã dời lên góc trên phải
+- S03: Judge nằm sát mép phải (x ~830–1040), ra ngoài vùng an toàn chữ 90–930 và có thể bị cột nút TikTok che một phần (mascot cũ cũng ở chỗ này)
+- S07: dòng "MẤY CHỊ ĐẸP?" bị ảnh gương che mép dưới chữ ở khung giữa cảnh (có từ v2, chưa sửa)
+- Pose Celebrate có sẵn cọc tiền + mũi tên đi lên. Bible mục 8: không dùng mascot để gợi hứa hẹn tiền/ra đơn. Ở đây dùng cho "công thức hoàn thành", không kèm chữ về tiền — cần CEO/Codex xem có ổn không
+
+CHƯA KIỂM ĐƯỢC
+- Không nghe được audio: độ tự nhiên khi tăng tốc, SFX, nhạc nền
+- Chuyển động giữa các khung (chỉ xem ảnh tĩnh)

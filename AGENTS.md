@@ -41,6 +41,7 @@ Luật **mỗi file một chủ**: chỉ chủ được tạo và sửa. Bên ki
 | `logs/nhat_ky.md` | Chung. Chỉ thêm dòng mới ở cuối |
 | `01_manager/`, `02_research/`, `03_content/`, `04_creative/`, `05_video/`, `06_social/`, `room/` | Claude |
 | `audits/` | Codex |
+| `logs/ceo_inbox.jsonl` | Server phòng agent ghi (quyết định CEO bấm trên Telegram / web); chỉ thêm dòng. Team Manager đọc và áp |
 | `videos/<ID>/01_suon/`, `03_creative/`, `04_dung/`, `06_social/` | Claude |
 | `videos/<ID>/02_kich_ban/`, `05_feedback/` | Codex |
 
@@ -130,7 +131,7 @@ Trong `videos/<ID>/04_dung/vNN/audit_pack/`: `bang_canh.md` (Cảnh | giây | c�
 - **Khối trạng thái** (giữa hai dòng `---` đầu thẻ): chỉ người đang giữ việc được sửa. Khi bàn giao: đổi `buoc`, `nguoi_giu`, `trang_thai`, `han`, rồi thêm một dòng vào **Lịch sử**.
 - `trang_thai`: `CHUA_LAM` · `DANG_LAM` · `CHO_CEO` · `CAN_SUA` · `BI_CHAN` · `XONG`.
 - `nguoi_giu` dạng `Claude/Video`, `Codex/Kich_ban`, `CEO`…
-- **Bảng Duyệt**: chỉ ghi khi CEO quyết qua (a) lời trực tiếp trong phiên, (b) cột **Anh quyết** trong tab Tập của Google Sheet, hoặc (c) nút trên Telegram (khi đã bật). Ghi nguyên văn, đường nào, thời gian. **Không bao giờ tự đánh dấu duyệt.**
+- **Bảng Duyệt**: chỉ ghi khi CEO quyết qua (a) lời trực tiếp trong phiên, (b) cột **Anh quyết** trong tab Tập của Google Sheet, hoặc (c) nút trên Telegram / web phòng agent — ghi vào `logs/ceo_inbox.jsonl`, Team Manager áp vào thẻ. Ghi nguyên văn, đường nào, thời gian. **Không bao giờ tự đánh dấu duyệt.**
 - **Nhắc** và **Lịch sử**: chỉ thêm dòng.
 - **Kho link**: mọi link của video ghi trong thẻ.
 - **Google Sheet** (Master Workspace v3) là màn hình của CEO; `board/` là hồ sơ gốc. Chỉ Claude/Manager ghi vào Sheet. CEO chỉ sửa 2 cột vàng.
