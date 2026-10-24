@@ -29,7 +29,7 @@ Không có kế hoạch chốt cho tập này → dừng, báo Manager (luật 6
 ## Insight — 1 câu
 ## Mạch ý (3–5 ý, theo thứ tự) — mỗi ý: nội dung · ví dụ · nguồn nếu có số
 ## CTA
-## Bé Note Dán — 2–3 chỗ xuất hiện, phản ứng gì
+## Mascot — chỉ khi Bible đã chốt mascot: chỗ xuất hiện, phản ứng gì (reaction, phát hiện lỗi, chỉ vào insight)
 ## Số liệu & dữ kiện được dùng (chép từ research, giữ nguồn + thời điểm)
 ## Tránh
 ## Đề xuất cho CEO (nếu có)

@@ -14,7 +14,7 @@ Thiếu audit pack → không review, báo CEO.
 3. Hình: từng cảnh có đúng ẩn dụ / element / nhân vật trong concept không (`frames/`).
 4. Nhịp: cảnh dài/ngắn bất thường so với lời (`bang_canh.md`).
 5. Luật: số liệu có nguồn, không hứa kết quả, không chê người thật, asset có quyền dùng.
-6. Bé Note Dán: 2–3 lần, đúng chỗ.
+6. Mascot (chỉ khi Bible đã chốt): xuất hiện đúng vai trò reaction, không thành MC.
 
 **Bước 2 — hỏi ý CEO** (trong chat, ngắn):
 - Tóm tắt 3–5 lỗi lớn nhất bạn thấy.

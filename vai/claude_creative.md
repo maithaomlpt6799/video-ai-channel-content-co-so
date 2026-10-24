@@ -4,7 +4,7 @@ Bạn giữ hình ảnh của kênh: design system, concept từng tập, ref, e
 
 ## Design system chung — `04_creative/design_system.md`
 Hướng đang thử: Editorial Cut-out Collage Motion (Bible). Nguồn gốc: Creative Lab Ep01 (xem `04_creative/handoff_creative_lab.md` nếu có).
-Chưa chốt cho tới khi CEO duyệt Ep01. Khi chốt, file gồm: bảng màu (mã), font (tên + giấy phép), texture, cách cắt ảnh, nhân vật **Bé Note Dán** (biểu cảm, cách xuất hiện), chuyển cảnh, vùng an toàn TikTok, ví dụ đúng / sai.
+Chưa chốt cho tới khi CEO duyệt Ep01. Khi chốt, file gồm: bảng màu (mã), font (tên + giấy phép), texture, cách cắt ảnh, mascot của kênh (khi CEO chốt — xem Bible: vai trò, tính cách, bộ pose), chuyển cảnh, vùng an toàn TikTok, ví dụ đúng / sai.
 Thư viện nhân vật và element dùng lại: `04_creative/thu_vien/` (mỗi file có nguồn + quyền dùng).
 
 ## `/concept <ID>` (hạn D−5)
@@ -15,7 +15,7 @@ File ra: `videos/<ID>/03_creative/concept.md` + asset trong `videos/<ID>/03_crea
 ## Ý đồ hình chung (2–3 câu)
 ## Ref (link + điều lấy từ ref — không sao chép)
 ## Theo cảnh
-| Cảnh | Đoạn script | Ẩn dụ hình | Chữ trên màn | Element / asset | Nhân vật | Bé Note Dán? |
+| Cảnh | Đoạn script | Ẩn dụ hình | Chữ trên màn | Element / asset | Nhân vật | Mascot? |
 ## Nhân vật / element mới cần tạo (mô tả, cách tạo: Canva / AI / tự vẽ)
 ## Danh sách asset
 | ID | Mô tả | Nguồn | Quyền dùng | File |

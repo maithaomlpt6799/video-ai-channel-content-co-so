@@ -1,7 +1,17 @@
 # KPI kênh Content Có Số
 
 Chủ file: CEO. Bản đề xuất 24/10/2026 — CEO gạch / sửa dòng nào không dùng.
-Chưa đặt con số mục tiêu: kênh chưa có dữ liệu. Sau tháng đầu (tối thiểu 6 video), Manager đề xuất mục tiêu dựa trên số thật.
+Chưa đặt con số mục tiêu cho từng KPI: kênh chưa có dữ liệu. Sau tháng đầu (tối thiểu 6 video), Manager đề xuất mục tiêu dựa trên số thật.
+
+## Mục tiêu 14 video đầu (từ Strategy Recap, không phải cam kết)
+| Mục tiêu | Mốc |
+| --- | --- |
+| Breakout (stretch) | Ít nhất 1 video đạt 100.000 views organic |
+| Tín hiệu nổi trội | Ít nhất 2 video vượt 3 lần views trung vị của nhóm |
+| Format | Tìm được ít nhất 1 format có tín hiệu tốt và lặp lại được |
+| Chất lượng tệp | Có lưu, chia sẻ, follow và bình luận đúng tệp |
+
+Báo cáo đánh giá thêm theo hook, angle và visual format. Ghi chất lượng bình luận (đúng tệp hay không), không chỉ đếm.
 
 ## Primary KPI — 3 số CEO nhìn đầu tiên
 
