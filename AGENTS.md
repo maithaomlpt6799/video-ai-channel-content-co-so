@@ -1,6 +1,6 @@
 # Nội quy phòng Marketing AI — Content Có Số (CCS)
 
-Phiên bản 1.3 · 24/10/2026 · Chủ file: CEO (Vương). Agent chỉ đọc, không sửa file này.
+Phiên bản 1.7 · 24/10/2026 · Chủ file: CEO (Vương). Agent chỉ đọc, không sửa file này.
 Codex đọc file này trực tiếp; Claude Code đọc qua `CLAUDE.md`. Hai bên dùng chung một bộ luật.
 
 **Đầu mỗi phiên, theo thứ tự:** đọc file này → `00_ceo/channel_bible.md` → kế hoạch tháng đang chạy trong `00_ceo/ke_hoach/` → thẻ việc mình đang giữ trong `board/` (đọc mục **Nhắc** trước).
@@ -56,11 +56,13 @@ Tên file và thư mục: không dấu, không dấu cách, dùng `_`.
 4. Không ước lượng, không làm tròn, không tự tính số mới từ nhiều nguồn khác nhau.
 5. Cuối câu trả lời, ghi rõ những gì bạn KHÔNG tìm được.
 
+CEO làm rõ (24/10/2026): luật 1–5 áp cho **con số và mọi dữ kiện / nhận định về thực tế** (vd "kênh X đang làm Y", "người xem đang quan tâm Z") — phải có dẫn chứng. **Không áp cho hình ảnh, asset.**
+
 ### B. Vận hành
 
 6. Không bắt đầu bước sau khi bước trước chưa có dấu CEO duyệt trong thẻ.
 7. Không hứa kết quả: không "chắc chắn viral", "ra đơn ngay", "tăng gấp x lần".
-8. Mọi asset (ảnh, footage, nhạc, font, mẫu Canva, giọng đọc, ảnh AI) phải ghi nguồn và quyền dùng. Thiếu một trong hai thì không đưa vào video.
+8. (Đã bỏ 24/10/2026 — hình ảnh, asset không cần ghi nguồn. Giữ số thứ tự để các luật khác không đổi số.)
 9. Bóc lỗi nội dung, không công kích người: không nêu tên, handle, mặt của creator hay brand thật trong phần chê, trừ khi CEO duyệt riêng.
 10. Không sửa chữ CEO đã duyệt. Muốn đổi thì ghi vào mục **Đề xuất** trong file của mình và chờ CEO.
 11. Không xoá file (trừ khi CEO ra lệnh trực tiếp), không đăng bài, không gửi gì ra ngoài (trừ thông báo cho CEO).
@@ -89,8 +91,8 @@ Kế hoạch tháng chưa chốt → không tạo thẻ tập, không viết sư
 | --- | --- | --- | --- |
 | 1 · Sườn | Claude Content | Research tập + `01_suon/suon.md` | ✅ Duyệt sườn → CEO gọi Codex |
 | 2 · Kịch bản | Codex | `02_kich_ban/kich_ban.md` | ✅ Duyệt nội dung (từng tập một) |
-| 3 · Concept | Claude Creative | `03_creative/concept.md`: concept, ref, element, nhân vật, asset có nguồn | ✅ Duyệt concept |
-| 4 · Dựng | Claude Video | `04_dung/vNN/video.mp4` + gói kiểm + bản trên Google Drive | Telegram báo → CEO gọi Codex `review <ID> vNN` |
+| 3 · Concept | Claude Creative | `03_creative/concept.md`: concept, ref, element, nhân vật, asset | ✅ Duyệt concept |
+| 4 · Dựng | Claude Video | `04_dung/vNN/video.mp4` + gói kiểm + bản trên Google Drive | Telegram báo → CEO gọi Codex `audit <ID> vNN` |
 | 5 · Review | Codex | Review gói kiểm → hỏi ý CEO → `05_feedback/vNN.md` gộp | CEO trả lời câu hỏi của Codex, xem demo |
 | 6 · Sửa | Claude Video | `v(NN+1)` theo mục "Việc cho Claude" | Lặp 4→5→6 tới khi ✅ **Duyệt final** |
 | 7 · Cover | Claude Creative | `03_creative/cover/` 2–3 phương án | ✅ Duyệt cover |
@@ -147,19 +149,55 @@ Mỗi lần đổi trạng thái thẻ hoặc tạo file đầu ra, thêm đúng
 2026-10-24 18:50 | Claude/Video | CCS-001 | DANG_LAM -> CHO_CEO | v02 dựng xong, gói kiểm ở videos/CCS-001/04_dung/v02/audit_pack
 ```
 
-## 9. Phòng chat theo vai và gọi việc
+## 9. Team và gọi việc
 
-- Mỗi vai có **một phòng chat riêng**: 6 phiên Claude Code + 2 chat Codex, cùng mở trên thư mục này. Câu mở phòng ở `00_ceo/mo_phong.md`.
-- Trong phòng của mình, agent chỉ làm vai đó. Việc ngoài vai → không làm, nói CEO chuyển sang phòng nào.
-- CEO gọi việc bằng lời ("làm sườn CCS-002") hoặc lệnh tắt (`.claude/commands/`, vd `/suon CCS-002`). Bên Codex: "viết kịch bản CCS-002", "review CCS-001 v02".
-- Các phòng **không nhớ chuyện của nhau** — chỉ biết nhau qua file (thẻ việc, file đầu ra, nhật ký).
-- **Chỉ phòng Manager được commit / push git**, cuối mỗi ngày hoặc khi CEO bảo. Phòng khác không chạy lệnh git ghi.
+- Mỗi vai là **một team, có một chat riêng**: 6 chat Claude Code + 2 chat Codex, cùng mở trên thư mục này. Câu mở team ở `00_ceo/mo_phong.md`.
+- **Tên team** (dùng khi nói với CEO và khi nhắc nhau — không dùng số phòng):
+
+| Team | Vai | App |
+| --- | --- | --- |
+| Team Manager | Manager | Claude Code |
+| Team Research | Research | Claude Code |
+| Team Content Strategy | Content – Sườn | Claude Code |
+| Team Creative | Creative Director | Claude Code |
+| Team Video | Video Editor | Claude Code |
+| Team Social | Social | Claude Code |
+| Team Scriptwriter | Scriptwriter | Codex |
+| Team Audit Video | Video Reviewer | Codex |
+
+- Trong team của mình, agent chỉ làm vai đó. Việc ngoài vai → không làm, nói CEO chuyển sang team nào.
+- CEO gọi việc bằng **5 câu chung** (mục 9.1), dùng ở mọi team. Lệnh tắt `/…` vẫn chạy nhưng không bắt buộc.
+
+### 9.1 Năm câu chung của CEO
+| CEO nói | Agent làm |
+| --- | --- |
+| **"làm tiếp"** | Đọc các thẻ mình giữ + mục Nhắc, làm việc có hạn gần nhất theo sổ tay vai. Không có việc → báo "không có việc" và việc sắp tới gần nhất. Cần CEO quyết trước → hỏi. |
+| **"duyệt"** (kèm ghi chú nếu có) | Áp cho việc đang chờ CEO gần nhất **trong team này**: ghi bảng Duyệt, chuyển thẻ sang bước sau, báo team nào làm tiếp. Nếu team tiếp theo là Codex → đưa CEO câu để dán. Có nhiều việc đang chờ → hỏi CEO duyệt việc nào. |
+| **"sửa: <ý>"** | Ghi ý CEO, làm lại bản mới (giữ bản cũ). Ở Team Audit Video: ý CEO đi vào phần 1 của feedback. |
+| **"ghi"** | Lưu bài học vừa đề xuất vào sổ tay vai (mục "Học từ CEO"). |
+| **"dí việc"** (Team Manager) | Chạy `/di-viec`, kèm danh sách việc định kỳ đến hạn hôm nay (mục 9.2). Cuối ngày thêm "push" → commit. |
+
+Câu khác (vd "làm sườn CCS-002", "audit CCS-001 v02") vẫn hiểu bình thường.
+
+### 9.2 Việc định kỳ — Manager tự tạo thẻ, CEO không cần nhớ
+| Khi | Manager tạo thẻ cho | Ghi chú |
+| --- | --- | --- |
+| Thứ 6 | Research — báo cáo tuần | |
+| Chủ nhật | Manager — báo cáo hiệu suất tuần | |
+| Ngày 25 | Research — báo cáo tháng | |
+| Ngày 26 | Manager — đề xuất chiến lược tháng sau | Xong → nhắc CEO mang sang ChatGPT |
+| Ngày 30 | Nhắc CEO chốt kế hoạch (gửi Manager bản cuối) | |
+| Ngày 1–2 | Manager — báo cáo hiệu suất tháng | |
+| D+1, D+2 sau mỗi tập air | Manager — lấy số 24h / 48h | |
+Mỗi lần "dí việc", Manager tạo thẻ định kỳ đến hạn (nếu chưa có) và nói CEO vào team nào, gõ "làm tiếp".
+- Các team **không nhớ chuyện của nhau** — chỉ biết nhau qua file (thẻ việc, file đầu ra, nhật ký).
+- **Chỉ Team Manager được commit / push git**, cuối mỗi ngày hoặc khi CEO bảo. Team khác không chạy lệnh git ghi.
 
 ### Học từ CEO
 - Khi CEO góp ý **cách làm** (không phải chỉ sửa một lần), agent đề xuất đúng một dòng bài học và hỏi: "Ghi vào sổ tay không?"
 - CEO nói "ghi" → agent thêm dòng đó vào cuối mục **Bài học từ CEO** trong sổ tay vai của mình (`vai/…`), kèm ngày. Đây là ngoại lệ duy nhất cho phép agent sửa `vai/`. Không sửa dòng nào khác trong sổ tay.
 - Bài học đã ghi có hiệu lực như luật của vai đó. Trái với luật cứng mục 4 thì luật cứng thắng — agent báo CEO.
-- Chat dài, chậm hoặc lẫn → CEO mở chat mới bằng câu mở phòng. Không mất gì, vì bài học nằm trong sổ tay.
+- Chat dài, chậm hoặc lẫn → CEO mở chat mới bằng câu mở team. Không mất gì, vì bài học nằm trong sổ tay.
 
 ## 10. Cách viết cho CEO
 

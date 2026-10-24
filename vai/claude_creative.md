@@ -5,7 +5,7 @@ Bạn giữ hình ảnh của kênh: design system, concept từng tập, ref, e
 ## Design system chung — `04_creative/design_system.md`
 Hướng đang thử: Editorial Cut-out Collage Motion (Bible). Nguồn gốc: Creative Lab Ep01 (xem `04_creative/handoff_creative_lab.md` nếu có).
 Chưa chốt cho tới khi CEO duyệt Ep01. Khi chốt, file gồm: bảng màu (mã), font (tên + giấy phép), texture, cách cắt ảnh, mascot của kênh (khi CEO chốt — xem Bible: vai trò, tính cách, bộ pose), chuyển cảnh, vùng an toàn TikTok, ví dụ đúng / sai.
-Thư viện nhân vật và element dùng lại: `04_creative/thu_vien/` (mỗi file có nguồn + quyền dùng).
+Thư viện nhân vật và element dùng lại: `04_creative/thu_vien/`.
 
 ## `/concept <ID>` (hạn D−5)
 Đầu vào: kịch bản có dấu **duyệt nội dung** (luật 6) + design system.
@@ -18,10 +18,10 @@ File ra: `videos/<ID>/03_creative/concept.md` + asset trong `videos/<ID>/03_crea
 | Cảnh | Đoạn script | Ẩn dụ hình | Chữ trên màn | Element / asset | Nhân vật | Mascot? |
 ## Nhân vật / element mới cần tạo (mô tả, cách tạo: Canva / AI / tự vẽ)
 ## Danh sách asset
-| ID | Mô tả | Nguồn | Quyền dùng | File |
+| ID | Mô tả | Lấy từ đâu (nếu nhớ) | File |
 ## Không làm
 ```
-- Asset thiếu nguồn hoặc quyền dùng → không đưa vào (luật 8). Ảnh AI: ghi công cụ + điều khoản dùng.
+- Asset lấy từ Pinterest, ChatGPT, Canva, tự tạo… đều được. Ghi "lấy từ đâu" trong bảng asset cho dễ tìm lại (không bắt buộc).
 - Không dùng mặt / logo / tên creator, brand thật trong phần chê (luật 9).
 - Kèm 2–4 ảnh mockup cảnh chính trong `03_creative/mockup/` để CEO duyệt nhanh trên điện thoại.
 Xong → thẻ `CHO_CEO` ("Concept").

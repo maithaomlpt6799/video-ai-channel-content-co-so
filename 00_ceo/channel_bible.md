@@ -69,11 +69,35 @@ Như người cùng nghề giỏi đang chia sẻ điều vừa phát hiện. Th
 ### Cover
 Creative editorial, trẻ, nổi, dễ đọc trên TikTok · headline ít chữ · một hero product nổi bật · có khoảng thở · nền sáng · chi tiết collage có cá tính · nhìn thumbnail thấy ngay lợi ích hoặc sự tò mò · không giống poster bán mỹ phẩm.
 
-## 8. Mascot — (chưa chốt nhân vật)
-- Vai trò: thỉnh thoảng xuất hiện để reaction, bất ngờ, phát hiện lỗi content, gợi ý giải pháp, chỉ vào insight. **Không phải MC, không dẫn xuyên suốt.**
-- Tính cách: ngộ nghĩnh, tinh nghịch, hài hước, hơi láu cá, biểu cảm mạnh, đủ độc đáo, dễ animate, làm sticker được. Hình khối đơn giản, silhouette dễ nhận, tay chân linh hoạt, nhiều pose từ một nhân vật.
-- **Bắt buộc:** nhân vật hư cấu, thiết kế nguyên bản. Không lấy mặt người thật.
-- Đã thử: Bé Note Dán, Bé Tag Nội Dung, Bé Bong Bóng Ý, Mèo 2D, Mèo lai đồng xu, mascot hình tiền, Bé Lửa, Bé Nước, Bé Mặt Trời, Bé Tôm, Bé Cua. **Chưa có bản cuối** → agent không đưa mascot vào video cho tới khi CEO chốt.
+## 8. Mascot — **Bé Tiền Tít** (CEO chốt 24/10/2026)
+File gốc: `04_creative/thu_vien/mascot/be_tien_tit_sheet.png` (bản "Option 2 — Mascot for Content Có Số").
+
+**Tạo hình**
+- Tờ tiền giấy màu xanh lá nhạt, dáng hơi vuông, hai góc trên nhô thành **tai mèo**; viền hoa văn tiền xanh đậm.
+- Mặt nền kem, má hồng, mắt đen to, miệng cười đỏ; biểu cảm mạnh (nháy mắt, cười híp, nheo mắt nghi ngờ).
+- Giữa thân có huy hiệu tròn xanh với ký hiệu tiền. Tay chân ngắn, màu xanh đậm, găng tay trắng.
+- Nét viền đen dày, chất liệu như in risograph / giấy có hạt — hợp hướng collage.
+- Có sẵn mặt sau đơn giản (back view).
+
+**Câu cửa miệng:** "Có số là có idea!"
+
+**5 pose chuẩn — dùng đúng vai trò:**
+| Pose | Câu | Dùng khi |
+| --- | --- | --- |
+| Wave | "Xin chào mọi người!" | Mở đầu (ít dùng — không biến thành MC) |
+| Laugh | "Hahaha!" | Reaction với ví dụ buồn cười, lỗi ngớ ngẩn |
+| Judge | "Hmm…" | **Phát hiện lỗi content** — pillar Bóc lỗi Content |
+| Celebrate | "Có số rồi!" | Khoảnh khắc ra kết quả / bản sửa tốt hơn |
+| Idea | "Có idea nè!" | **Chỉ vào insight, gợi ý giải pháp** |
+
+**Bảng màu nhân vật:** xanh đậm gần đen · xanh lá nhạt · kem · đỏ đô · tím lavender. (Team Creative đo mã màu chính xác từ file gốc, ghi vào design system.)
+**Doodle đi kèm:** lấp lánh 4 cánh, mũi tên đỏ đi lên, tờ tiền nhỏ, bóng đèn ý tưởng.
+
+**Luật dùng**
+- Vai trò: reaction, bất ngờ, phát hiện lỗi, gợi ý giải pháp, chỉ vào insight. **Không phải MC, không dẫn xuyên suốt.** 2–3 lần mỗi tập là đủ; tập nào không hợp thì không dùng.
+- Mascot hình tiền nhưng **"Có số" ≠ doanh số**: không dùng Bé Tiền Tít để gợi ý hứa hẹn tiền, ra đơn, thu nhập (luật 7). Tiền ở đây là "con số, bằng chứng".
+- Không đổi tạo hình, màu, tỷ lệ giữa các tập. Pose mới phải giữ đúng silhouette tai mèo + thân tờ tiền; Team Creative làm, CEO duyệt rồi thêm vào thư viện.
+- Nhân vật hư cấu, nguyên bản. Không ghép mặt người thật.
 
 ## 9. Giọng đọc — (chưa chốt giọng cố định)
 - Cần: trẻ, hợp Gen Z, tự nhiên như kể bạn bè, nhanh nhẹn, thông minh, có năng lượng và nhấn nhá, hơi tinh nghịch. Không trầm, già, đều đều. Đã loại: giọng thuyết minh chậm, thiếu năng lượng, như đọc giáo trình.
@@ -107,4 +131,4 @@ Creative editorial, trẻ, nổi, dễ đọc trên TikTok · headline ít chữ
 - Cover: A "1 THỎI SON. 3 CONTENT ANGLES." · B "BÍ IDEA? THỬ CÁCH NÀY!" · C "1 SON = 3 IDEAS" — **(chưa chốt)**.
 
 ## 13. Còn đang bàn (CEO quyết)
-Mascot chính và bộ pose · giọng cố định (Harper / Adam) · cover và hook Ep01 · khoá design system · danh sách kênh benchmark.
+Giọng cố định (Harper / Adam) · cover và hook Ep01 · khoá design system · danh sách kênh benchmark.

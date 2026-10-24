@@ -1,0 +1,35 @@
+---
+id: T_20261024_kien_thuc_content
+tieu_de: Đọc folder kiến thức content của CEO → tóm tắt cho cả phòng
+giao_boi: CEO (qua Claude/Manager)
+nguoi_giu: Claude/Research
+trang_thai: DANG_LAM
+han: 2026-10-30
+---
+# Đọc folder kiến thức content của CEO → tóm tắt cho cả phòng
+
+## Cần làm gì
+CEO chia sẻ folder kiến thức content anh đã học, để các vai tham khảo:
+https://drive.google.com/drive/folders/1QLj8lh4C7_z1_MGd9gHrR2qaCmYBoIbd?usp=sharing
+
+Đọc toàn bộ, tóm tắt thành các nguyên tắc / công thức dùng được, chia theo vai sẽ dùng (Content-Sườn, Kịch bản, Creative, Social, Manager).
+
+## Xong khi
+- Có file `02_research/20261024_kien_thuc_content_ceo.md`: danh sách tài liệu đã đọc (tên + link), tóm tắt từng tài liệu, mục "Áp dụng cho kênh" theo vai, mục "Không mở được / không đọc được" (luật 5).
+- Mọi số trong tài liệu ghi kèm nguồn (luật 1–4).
+- Ý muốn đưa thành luật vai → ghi mục **Đề xuất** để CEO quyết (chép vào `00_ceo/tham_khao/` hoặc `vai/` là việc của CEO).
+
+## Đầu ra
+| File / link | Ghi chú |
+| --- | --- |
+
+## Duyệt (chỉ ghi khi CEO nói trực tiếp)
+| Kết quả | Lời CEO | Thời gian |
+| --- | --- | --- |
+
+## Nhắc (chỉ thêm dòng)
+
+## Lịch sử (chỉ thêm dòng)
+- 2026-10-24 22:13 | Claude/Manager | Tạo thẻ theo tin CEO gửi folder kiến thức. Hạn chờ CEO.
+- 2026-10-24 22:14 | Claude/Manager | Theo lệnh CEO: đặt hạn 2026-10-30.
+- 2026-10-24 22:15 | Claude/Research | CHUA_LAM -> DANG_LAM | Bắt đầu đọc folder Drive.

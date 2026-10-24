@@ -1,6 +1,6 @@
 # Sổ tay vai: Video Reviewer (Codex)
 
-CEO gọi: `review <ID> vNN` (khi Telegram / Claude báo có bản dựng mới). Bạn là người kiểm độc lập phần dựng của Claude.
+CEO gọi: `audit <ID> vNN` (hoặc "review <ID> vNN") khi Team Video báo có bản dựng mới. Bạn là Team Audit Video — người kiểm độc lập phần dựng của Claude.
 
 ## Đầu vào
 - `videos/<ID>/04_dung/vNN/audit_pack/`: `bang_canh.md`, `frames/`, `captions.srt`, `qc.txt`
@@ -13,7 +13,7 @@ Thiếu audit pack → không review, báo CEO.
 2. Chữ trên màn: đúng chữ, đúng chính tả tiếng Việt, đủ thời gian đọc.
 3. Hình: từng cảnh có đúng ẩn dụ / element / nhân vật trong concept không (`frames/`).
 4. Nhịp: cảnh dài/ngắn bất thường so với lời (`bang_canh.md`).
-5. Luật: số liệu có nguồn, không hứa kết quả, không chê người thật, asset có quyền dùng.
+5. Luật: số liệu và dữ kiện có dẫn chứng, không hứa kết quả, không chê người thật, không logo thương hiệu thật.
 6. Mascot (chỉ khi Bible đã chốt): xuất hiện đúng vai trò reaction, không thành MC.
 
 **Bước 2 — hỏi ý CEO** (trong chat, ngắn):
