@@ -1,0 +1,190 @@
+// Ba bìa tạp chí — ba thế giới tách ra từ cùng một thỏi son (SC04 · HERO).
+import React from 'react';
+import {useCurrentFrame, useVideoConfig} from 'remotion';
+import {cue, SCENE, segStart} from './timing';
+import {onTwos, pop, slam} from '../lab/fx';
+import {CoverShell} from '../lab/Cards';
+import {RedStroke, Stamp, circlePath} from '../lab/Marks';
+import {AlarmClock, Backpack, Coffee, HandMirror, Laptop, Lipstick, OptionCard, OvalMirror, Swatch} from '../lab/Props';
+import {Cutout} from '../lab/Scrap';
+import {HandNote, Headline} from '../lab/Type';
+import {C, F, img} from '../lab/theme';
+
+const r = (abs: number) => abs - SCENE.sc4;
+/** Phần tử đầu tiên của bìa 1 chỉ xuất hiện sau khi tờ bìa đã quét lên. */
+const MIN_START = 16;
+
+type CueSet = {who: number; second: number; idea: number; head: number};
+const cues = (seg: string, second: string, min = 0): CueSet => ({
+  who: Math.max(min, r(cue(seg, 'who'))),
+  second: Math.max(min, r(cue(seg, second))),
+  idea: r(cue(seg, 'idea')),
+  head: r(cue(seg, 'headline')),
+});
+
+/** Dải vé nhỏ AI · KHI NÀO · VẤN ĐỀ trên mỗi bìa. */
+const CoverTicket: React.FC<{items: [string, string, number][]}> = ({items}) => {
+  const frame = useCurrentFrame();
+  const {fps} = useVideoConfig();
+  return (
+    <div style={{position: 'absolute', left: 90, top: 318, width: 900, display: 'flex', gap: 12}}>
+      {items.map(([label, value, t], i) => {
+        const p = pop(frame, t, fps, 320);
+        return (
+          <div
+            key={label}
+            style={{
+              flex: i === 0 ? 1.25 : 1,
+              backgroundColor: C.white,
+              border: `3px solid ${C.ink}`,
+              padding: '6px 14px 8px',
+              scale: String(p),
+              rotate: `${[-1.5, 1, -0.5][i]}deg`,
+              boxShadow: '5px 7px 0 rgba(36,35,33,0.18)',
+            }}
+          >
+            <div style={{fontFamily: F.label, fontWeight: 600, fontSize: 22, letterSpacing: 2, color: C.burgundy}}>{label}</div>
+            <div style={{fontFamily: F.label, fontWeight: 800, fontSize: 36, color: C.ink, whiteSpace: 'nowrap', lineHeight: 1.05}}>{value}</div>
+          </div>
+        );
+      })}
+    </div>
+  );
+};
+
+/** Hiệu ứng "bật lên từ dưới" cho ảnh người cut-out. */
+const rise = (frame: number, t: number, fps: number) => {
+  const p = pop(frame, t, fps, 200);
+  return {translate: `0px ${(1 - p) * 420}px`, opacity: p > 0 ? 1 : 0};
+};
+
+const Wobble = (frame: number, t: number, len = 18) => (frame >= t && frame < t + len ? (Math.floor(frame / 2) % 2 ? 7 : -7) * (1 - (frame - t) / len) : 0);
+
+export const Cover1: React.FC<{par: number}> = ({par}) => {
+  const frame = useCurrentFrame();
+  const {fps} = useVideoConfig();
+  const c = cues('s4a', 'voi', MIN_START);
+  const clock = slam(frame, c.second);
+  return (
+    <CoverShell color={C.butter} issue="N°01 · DÂN VĂN PHÒNG">
+      <CoverTicket
+        items={[
+          ['AI', 'DÂN VĂN PHÒNG', c.who],
+          ['KHI NÀO', '7H SÁNG', c.second],
+          ['VẤN ĐỀ', 'VỘI, TRỄ GIỜ', c.second + 8],
+        ]}
+      />
+      <div style={{position: 'absolute', inset: 0, translate: `${par * 0.18}px 0px`}}>
+        <Cutout src={img('office_girl.png')} w={540} style={{left: 480, top: 470, ...rise(frame, c.who, fps)}} />
+        {frame >= c.second ? (
+          <AlarmClock w={330} style={{left: 70, top: 470, scale: String(clock.scale), opacity: clock.opacity, rotate: `${-10 + Wobble(frame, c.second + 4)}deg`}} />
+        ) : null}
+        {frame >= c.second + 8 ? <HandNote text="trễ giờ rồi!" color={C.tomato} size={58} rot={-8} style={{left: 110, top: 410}} /> : null}
+        <Laptop w={340} style={{left: 60, top: 830, rotate: '4deg', scale: String(pop(frame, c.second + 6, fps))}} />
+        <Coffee w={120} style={{left: 360, top: 850, rotate: '-7deg', scale: String(pop(frame, c.second + 10, fps))}} />
+      </div>
+      {frame >= c.idea ? <HandNote text="ý tưởng:" color={C.burgundy} size={60} rot={-4} style={{left: 96, top: 1036}} /> : null}
+      <Headline start={c.head} size={165} lines={[{text: 'MAKEUP'}, {text: '5 PHÚT', color: C.ivory, bg: C.burgundy}]} style={{left: 90, top: 1135}} />
+      {frame >= c.head + 10 ? (
+        <Stamp text="ANGLE 01" size={58} rot={12} seed={11} scale={slam(frame, c.head + 10).scale} style={{left: 700, top: 1110}} />
+      ) : null}
+    </CoverShell>
+  );
+};
+
+const SWATCHES: [string, string, string][] = [
+  [C.burgundy, 'ĐỎ GẠCH', 'N°1'],
+  [C.tomato, 'CAM SAN HÔ', 'N°2'],
+  ['#D98C8C', 'HỒNG ĐẤT', 'N°3'],
+];
+
+export const Cover2: React.FC<{par: number}> = ({par}) => {
+  const frame = useCurrentFrame();
+  const {fps} = useVideoConfig();
+  const c = cues('s4b', 'moi_tap');
+  return (
+    <CoverShell color={C.peri} issue="N°02 · SINH VIÊN">
+      <CoverTicket
+        items={[
+          ['AI', 'SINH VIÊN', c.who],
+          ['KHI NÀO', 'TRƯỚC GIỜ HỌC', c.who + 6],
+          ['VẤN ĐỀ', 'MỚI TẬP', c.second],
+        ]}
+      />
+      <div style={{position: 'absolute', inset: 0, translate: `${par * 0.18}px 0px`}}>
+        <Cutout src={img('student_girl.png')} w={520} style={{left: 560, top: 450, ...rise(frame, c.who, fps)}} />
+        <Backpack w={250} style={{left: 90, top: 470, rotate: `${-7 + Wobble(frame, c.who + 4, 10)}deg`, scale: String(pop(frame, c.who + 4, fps))}} />
+        <HandMirror w={150} style={{left: 370, top: 520, rotate: '12deg', scale: String(pop(frame, c.second, fps))}} />
+        {SWATCHES.map(([col, label, code], i) => (
+          <Swatch
+            key={code}
+            w={118}
+            color={col}
+            label={label}
+            code={code}
+            style={{left: 80 + i * 132, top: 840, rotate: `${(i - 1) * 8}deg`, scale: String(pop(frame, c.second + 4 + i * 3, fps, 320))}}
+          />
+        ))}
+        {frame >= c.second + 12 ? <HandNote text="màu nào đây??" color={C.ink} size={52} rot={5} style={{left: 110, top: 770}} /> : null}
+      </div>
+      {frame >= c.idea ? <HandNote text="ý tưởng:" color={C.burgundy} size={60} rot={-4} style={{left: 96, top: 1036}} /> : null}
+      <Headline start={c.head} size={165} lines={[{text: 'NEWBIE'}, {text: 'MAKEUP', color: C.ivory, bg: C.burgundy}]} style={{left: 90, top: 1135}} />
+      {frame >= c.head + 10 ? (
+        <Stamp text="ANGLE 02" size={58} rot={-10} seed={12} scale={slam(frame, c.head + 10).scale} style={{left: 640, top: 1150}} />
+      ) : null}
+    </CoverShell>
+  );
+};
+
+export const Cover3: React.FC<{par: number}> = ({par}) => {
+  const frame = useCurrentFrame();
+  const {fps} = useVideoConfig();
+  const c = cues('s4c', 'so_noi');
+  return (
+    <CoverShell color={C.lime} issue="N°03 · GU TỰ NHIÊN">
+      <CoverTicket
+        items={[
+          ['AI', 'GU TỰ NHIÊN', c.who],
+          ['KHI NÀO', 'HẰNG NGÀY', c.who + 6],
+          ['VẤN ĐỀ', 'SỢ NỔI QUÁ', c.second],
+        ]}
+      />
+      <div style={{position: 'absolute', inset: 0, translate: `${par * 0.18}px 0px`}}>
+        <OvalMirror w={430} src={img('natural_face.png')} style={{left: 80, top: 460, rotate: '-3deg', ...rise(frame, c.who, fps)}} />
+        <OptionCard
+          w={320}
+          color={C.tomato}
+          label="NỔI BẬT"
+          sub="son đậm, lì"
+          style={{left: 590, top: 450, rotate: '5deg', scale: String(pop(frame, c.second, fps))}}
+        />
+        <OptionCard
+          w={320}
+          color="#E3A79A"
+          label="TỰ NHIÊN"
+          sub="mỏng, trong"
+          style={{left: 610, top: 790, rotate: '-4deg', scale: String(pop(frame, c.second + 6, fps))}}
+        />
+        {/* gạch "nổi bật", tick "tự nhiên" */}
+        <RedStroke d="M 610 500 L 930 760 M 920 500 L 620 770" start={c.second + 14} dur={10} width={12} />
+        <RedStroke d="M 690 880 L 750 940 L 870 815" start={c.idea} dur={8} width={14} />
+      </div>
+      {frame >= c.idea ? <HandNote text="ý tưởng:" color={C.burgundy} size={60} rot={-4} style={{left: 96, top: 1036}} /> : null}
+      <Headline start={c.head} size={165} lines={[{text: 'MAKEUP'}, {text: 'TỰ NHIÊN', color: C.ivory, bg: C.burgundy}]} style={{left: 90, top: 1135}} />
+      <RedStroke d={circlePath(80, 1305, 640, 150)} start={c.head + 8} dur={12} width={10} />
+      {frame >= c.head + 12 ? (
+        <Stamp text="ANGLE 03" size={58} rot={9} seed={13} scale={slam(frame, c.head + 12).scale} style={{left: 700, top: 1110}} />
+      ) : null}
+    </CoverShell>
+  );
+};
+
+/** Thỏi son nhỏ bay ngang trong lúc camera lướt giữa các bìa. */
+export const FlyingLipstick: React.FC<{start: number; dur: number}> = ({start, dur}) => {
+  const frame = useCurrentFrame();
+  if (frame < start || frame > start + dur) return null;
+  const p = (onTwos(frame) - start) / dur;
+  return <Lipstick w={110} style={{left: 1150 - p * 1500, top: 1180 - Math.sin(p * Math.PI) * 140, rotate: `${-70 + p * 40}deg`}} />;
+};
+
+export const COVER_SEGS = ['s4a', 's4b', 's4c'].map(segStart);

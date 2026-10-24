@@ -1,0 +1,75 @@
+{
+ "s1": {
+  "duration": 3.412,
+  "cues": {
+   "y_tuong": 1.0,
+   "ban2": 1.692,
+   "cong_thuc": 2.592
+  }
+ },
+ "s2": {
+  "duration": 7.06,
+  "cues": {
+   "thoi_son": 0.88,
+   "mau_dep": 3.044,
+   "mem_moi": 3.856,
+   "de_dung": 4.856,
+   "xong": 5.758,
+   "bi_tiep": 6.44
+  }
+ },
+ "s3": {
+  "duration": 5.082,
+  "cues": {
+   "doi_cach": 0.1,
+   "ai": 1.182,
+   "luc_nao": 2.282,
+   "ho_gap": 3.582,
+   "van_de": 4.182
+  }
+ },
+ "s4a": {
+  "duration": 4.412,
+  "cues": {
+   "who": 0.09,
+   "voi": 0.89,
+   "idea": 2.472,
+   "headline": 3.272
+  }
+ },
+ "s4b": {
+  "duration": 4.392,
+  "cues": {
+   "who": 0.09,
+   "moi_tap": 0.99,
+   "idea": 2.122,
+   "headline": 3.022
+  }
+ },
+ "s4c": {
+  "duration": 5.092,
+  "cues": {
+   "who": 0.09,
+   "so_noi": 1.49,
+   "idea": 2.892,
+   "headline": 4.492
+  }
+ },
+ "s5a": {
+  "duration": 5.104,
+  "cues": {
+   "thay_khong": 0.1,
+   "mot_thoi": 0.792,
+   "doi_tinh": 2.314,
+   "ba_huong": 3.514
+  }
+ },
+ "s5b": {
+  "duration": 4.19,
+  "cues": {
+   "lan_toi": 0.08,
+   "dung_chi": 1.48,
+   "hay_nhin": 3.08
+  }
+ }
+}

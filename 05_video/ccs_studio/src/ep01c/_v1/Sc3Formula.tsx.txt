@@ -1,0 +1,127 @@
+// SC03 · "Thử đổi cách nghĩ: Ai đang dùng, dùng lúc nào, và họ đang gặp vấn đề gì?"
+import React from 'react';
+import {Freeze, interpolate, useCurrentFrame, useVideoConfig} from 'remotion';
+import {Sc2Page, SC2_LEN, SC2_SCALE} from './Sc2Product';
+import {cue, SCENE} from './timing';
+import {ease, onTwos, pop} from '../lab/fx';
+import {SpecimenCard, Ticket} from '../lab/Cards';
+import {RedStroke, Sweep} from '../lab/Marks';
+import {PaperBG} from '../lab/Paper';
+import {Headline, Kicker} from '../lab/Type';
+import {C, F} from '../lab/theme';
+
+export const SC3_LEN = SCENE.sc4 - SCENE.sc3;
+const r = (abs: number) => abs - SCENE.sc3;
+const clamp = {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'} as const;
+
+const CARDS = [
+  {no: 'N°01', title: 'AI?', label: 'người xem', color: C.butter, x: 90, y: 520, w: 400, size: 124, rot: -5, cue: 'ai'},
+  {no: 'N°02', title: 'KHI NÀO?', label: 'bối cảnh', color: C.peri, x: 560, y: 590, w: 430, size: 98, rot: 4, cue: 'luc_nao'},
+  {no: 'N°03', title: 'VẤN ĐỀ GÌ?', label: 'vấn đề', color: C.lime, x: 250, y: 890, w: 560, size: 108, rot: -2, cue: 'van_de'},
+] as const;
+
+const Token: React.FC<{show: boolean; children: React.ReactNode; color?: string}> = ({show, children, color = C.ink}) => (
+  <span style={{opacity: show ? 1 : 0, color}}>{children}</span>
+);
+
+export const Sc3Formula: React.FC = () => {
+  const frame = useCurrentFrame();
+  const {fps} = useVideoConfig();
+  const tAi = r(cue('s3', 'ai'));
+  const tKhi = r(cue('s3', 'luc_nao'));
+  const tVd = r(cue('s3', 'van_de'));
+  const tAngle = tVd + 14;
+
+  // Bìa SC02 mở ra như bìa tạp chí + camera lao vào trang trong
+  const open = ease(onTwos(frame), 0, 14, 0, 1);
+  const s = SC2_SCALE + (1 - SC2_SCALE) * open;
+  const flip = ease(frame, 1, 13, 0, -172);
+  const push = interpolate(frame, [14, SC3_LEN], [1, 1.05], clamp);
+  const ticketIn = ease(onTwos(frame), tAi, tAi + 8, 1, 0);
+
+  return (
+    <PaperBG color={C.ivory} grid>
+      <div style={{position: 'absolute', inset: 0, scale: String(s * push), rotate: `${-2 * (1 - open)}deg`}}>
+        <PaperBG color={C.ivory} grid>
+          <Kicker text="THỬ" color={C.burgundy} size={40} style={{left: 92, top: 250}} />
+          <Headline start={8} size={140} lines={[{text: 'ĐỔI CÁCH NGHĨ'}]} style={{left: 90, top: 318}} />
+          <div style={{position: 'absolute', left: 90, top: 470, width: 900, height: 4, backgroundColor: C.ink}} />
+
+          {/* Chỉ đỏ nối 3 biến số */}
+          <RedStroke d="M 290 700 C 420 760, 560 690, 770 740" start={tKhi + 6} dur={8} width={6} />
+          <RedStroke d="M 770 820 C 720 900, 640 930, 560 960" start={tVd + 6} dur={8} width={6} />
+          <RedStroke d="M 300 760 C 270 840, 300 900, 380 950" start={tVd + 10} dur={8} width={6} />
+
+          {CARDS.map((c, i) => {
+            const t = r(cue('s3', c.cue));
+            if (frame < t) return null;
+            const p = pop(frame, t, fps, 220);
+            return (
+              <SpecimenCard
+                key={c.title}
+                no={c.no}
+                title={c.title}
+                label={c.label}
+                color={c.color}
+                w={c.w}
+                size={c.size}
+                style={{
+                  left: c.x,
+                  top: c.y + (1 - p) * 260,
+                  rotate: `${c.rot + (1 - p) * (i % 2 ? -34 : 34)}deg`,
+                  scale: String(0.4 + 0.6 * p),
+                  opacity: Math.min(1, p * 3),
+                }}
+              />
+            );
+          })}
+
+          {/* Vé công thức tích luỹ dần */}
+          {frame >= tAi ? (
+            <Ticket w={900} stub="CÔNG THỨC" style={{left: 90, top: 1215, translate: `${ticketIn * -1100}px 0px`, rotate: '-1deg'}}>
+              <div style={{fontFamily: F.label, fontWeight: 800, fontSize: 50, letterSpacing: 1, color: C.ink, whiteSpace: 'nowrap'}}>
+                <Token show={frame >= tAi + 4}>NGƯỜI XEM</Token>
+                <Token show={frame >= tKhi + 4} color={C.burgundy}>
+                  {' + '}
+                </Token>
+                <Token show={frame >= tKhi + 4}>BỐI CẢNH</Token>
+                <Token show={frame >= tVd + 2} color={C.burgundy}>
+                  {' + '}
+                </Token>
+                <Token show={frame >= tVd + 2}>VẤN ĐỀ</Token>
+              </div>
+              <div style={{position: 'relative', height: 104, marginTop: 6}}>
+                <Sweep start={tAngle} dur={8} color={C.butter} style={{left: -8, top: 14, width: 620, height: 80}} />
+                {frame >= tAngle ? (
+                  <div style={{position: 'absolute', left: 0, top: 0, fontFamily: F.headline, fontSize: 96, lineHeight: 1.05, color: C.burgundy, whiteSpace: 'nowrap'}}>
+                    → CONTENT ANGLE
+                  </div>
+                ) : null}
+              </div>
+            </Ticket>
+          ) : null}
+        </PaperBG>
+
+        {/* Bìa SC02 (đóng băng ở frame cuối) lật mở quanh mép trái */}
+        {flip > -170 ? (
+          <div
+            style={{
+              position: 'absolute',
+              inset: 0,
+              transformOrigin: 'left center',
+              transform: `perspective(2600px) rotateY(${flip}deg)`,
+              backfaceVisibility: 'hidden',
+              outline: `${Math.round(14 / s)}px solid ${C.white}`,
+              overflow: 'hidden',
+              boxShadow: `${-20 * (flip / -172)}px 20px 0 rgba(36,35,33,0.2)`,
+            }}
+          >
+            <Freeze frame={SC2_LEN - 1}>
+              <Sc2Page />
+            </Freeze>
+          </div>
+        ) : null}
+      </div>
+    </PaperBG>
+  );
+};

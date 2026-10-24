@@ -1,0 +1,133 @@
+{
+ "hookA": {
+  "duration": 4.203,
+  "cues": {
+   "son": 0.467,
+   "ba": 1.705,
+   "angle": 2.371,
+   "tin": 3.63
+  },
+  "src": "pickup",
+  "tempo3": 1.05
+ },
+ "hookB": {
+  "duration": 3.561,
+  "cues": {
+   "content": 0.667,
+   "co_khi": 1.364,
+   "sai": 3.078
+  },
+  "src": "pickup",
+  "tempo3": 1.05
+ },
+ "p2a": {
+  "duration": 1.898,
+  "cues": {
+   "thoi_son": 0.762,
+   "do": 1.238
+  },
+  "src": "pickup",
+  "tempo3": 1.05
+ },
+ "p2b": {
+  "duration": 4.3,
+  "cues": {
+   "muon": 0.095,
+   "noi_bat": 1.048,
+   "son_do": 1.802,
+   "ba_hoang": 2.659,
+   "moi_mau": 3.326
+  },
+  "src": "pickup",
+  "tempo3": 1.05
+ },
+ "p2c": {
+  "duration": 3.835,
+  "cues": {
+   "muon": 0.095,
+   "gan_gui": 0.762,
+   "day_muon": 1.84,
+   "phut": 2.602,
+   "xinh": 3.173
+  },
+  "src": "pickup",
+  "tempo3": 1.05
+ },
+ "p2d": {
+  "duration": 3.643,
+  "cues": {
+   "muon": 0.0,
+   "dinh_kien": 0.571,
+   "ai_bao": 1.583,
+   "chi_dep": 3.107
+  },
+  "src": "pickup",
+  "tempo3": 1.05
+ },
+ "p2e": {
+  "duration": 6.395,
+  "cues": {
+   "do": 0.086,
+   "san_pham": 0.935,
+   "insight": 2.269,
+   "cach_ke": 2.935,
+   "ba": 4.223,
+   "angle": 4.985
+  },
+  "src": "pickup",
+  "tempo3": 1.05
+ },
+ "p3": {
+  "duration": 1.845,
+  "cues": {
+   "insight": 0.476,
+   "cach_ke": 1.238
+  },
+  "src": "pickup",
+  "tempo3": 1.05
+ },
+ "s1": {
+  "duration": 3.037,
+  "cues": {
+   "y_tuong": 0.898,
+   "ban2": 1.52,
+   "cong_thuc": 2.329
+  },
+  "src": "reuse",
+  "tempo": 1.06,
+  "tempo3": 1.05
+ },
+ "s2": {
+  "duration": 6.341,
+  "cues": {
+   "thoi_son": 0.79,
+   "mau_dep": 2.735,
+   "mem_moi": 3.465,
+   "de_dung": 4.363,
+   "xong": 5.173,
+   "bi_tiep": 5.786
+  },
+  "src": "reuse",
+  "tempo": 1.06,
+  "tempo3": 1.05
+ },
+ "s3k": {
+  "duration": 0.844,
+  "cues": {
+   "doi_cach": 0.09
+  },
+  "src": "reuse",
+  "tempo": 1.06,
+  "tempo3": 1.05
+ },
+ "s5bk": {
+  "duration": 2.546,
+  "cues": {
+   "lan_toi": 0.071,
+   "dung_chi": 1.33
+  },
+  "src": "reuse",
+  "tempo": 1.06,
+  "tempo3": 1.05
+ }
+}

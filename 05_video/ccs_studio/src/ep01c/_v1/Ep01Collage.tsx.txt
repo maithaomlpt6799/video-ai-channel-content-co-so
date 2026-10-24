@@ -1,0 +1,121 @@
+// =============================================================
+//  CONTENT CÓ SỐ · EPISODE 01 — Editorial Cut-out Collage Motion
+//  "Bạn không thiếu ý tưởng. Bạn thiếu đúng một công thức này."
+// =============================================================
+import React from 'react';
+import {AbsoluteFill, Sequence, staticFile} from 'remotion';
+import {Audio} from '@remotion/media';
+import {Sc1Hook} from './Sc1Hook';
+import {Sc2Product, SC2_LEN, SC2_ZOOM} from './Sc2Product';
+import {Sc3Formula, SC3_LEN} from './Sc3Formula';
+import {Sc45Covers, T45} from './Sc45Covers';
+import {cue, DURATION, f, SCENE, SEG, VOICE_IDS, WIPE} from './timing';
+import {Grain} from '../lab/Paper';
+import {sfx} from '../lab/theme';
+
+export const EP01C = {id: 'Ep01-ContentCoSo', duration: DURATION};
+
+/** [tên sfx, frame tuyệt đối, âm lượng] */
+const s4 = SCENE.sc4;
+const SFX: [string, number, number][] = [
+  // SC01
+  ['pop', 1, 0.3],
+  ['pop', 5, 0.25],
+  ['paper_impact', 9, 0.55],
+  ['crumple', 36, 0.45],
+  ['rip', cue('s1', 'cong_thuc') - 1, 0.55],
+  ['pop', cue('s1', 'cong_thuc') + 5, 0.3],
+  ['pop', cue('s1', 'cong_thuc') + 11, 0.3],
+  // SC02
+  ['whoosh', SCENE.sc2 - 3, 0.35],
+  ['paper_impact', cue('s2', 'mau_dep'), 0.4],
+  ['paper_impact', cue('s2', 'mem_moi'), 0.4],
+  ['paper_impact', cue('s2', 'de_dung'), 0.4],
+  ['pop', cue('s2', 'xong'), 0.3],
+  ['pop', cue('s2', 'xong') + 4, 0.3],
+  ['pop', cue('s2', 'xong') + 8, 0.3],
+  ['pop', cue('s2', 'xong') + 12, 0.3],
+  ['stamp', cue('s2', 'bi_tiep'), 0.6],
+  ['whoosh', SCENE.sc2 + SC2_ZOOM, 0.3],
+  // SC03
+  ['page_flip', SCENE.sc3, 0.55],
+  ['pop', cue('s3', 'ai'), 0.35],
+  ['pop', cue('s3', 'luc_nao'), 0.35],
+  ['pop', cue('s3', 'van_de'), 0.35],
+  ['tick', cue('s3', 'van_de') + 14, 0.5],
+  // SC04
+  ['paper_impact', s4, 0.5],
+  ['whoosh', s4 + T45.split, 0.35],
+  ['rip', s4 + T45.wipe, 0.4],
+  ['pop', s4 + 16, 0.3],
+  ['paper_impact', cue('s4a', 'voi'), 0.4],
+  ['tick', cue('s4a', 'voi') + 4, 0.45],
+  ['tick', cue('s4a', 'voi') + 8, 0.45],
+  ['tick', cue('s4a', 'voi') + 12, 0.45],
+  ['stamp', cue('s4a', 'headline') + 10, 0.4],
+  ['whoosh', s4 + T45.pan1, 0.45],
+  ['pop', cue('s4b', 'who'), 0.3],
+  ['pop', cue('s4b', 'moi_tap') + 4, 0.25],
+  ['pop', cue('s4b', 'moi_tap') + 7, 0.25],
+  ['pop', cue('s4b', 'moi_tap') + 10, 0.25],
+  ['stamp', cue('s4b', 'headline') + 10, 0.4],
+  ['whoosh', s4 + T45.pan2, 0.45],
+  ['pop', cue('s4c', 'who'), 0.3],
+  ['pop', cue('s4c', 'so_noi'), 0.3],
+  ['pop', cue('s4c', 'so_noi') + 6, 0.3],
+  ['stamp', cue('s4c', 'headline') + 12, 0.4],
+  // SC05
+  ['whoosh', s4 + T45.zoom, 0.45],
+  ['paper_impact', s4 + T45.zoom + 20, 0.35],
+  ['pop', s4 + T45.mot, 0.35],
+  ['tick', s4 + T45.ba, 0.45],
+  ['pop', s4 + T45.lan + 4, 0.3],
+  ['rip', s4 + T45.nhin, 0.5],
+  ['stamp', s4 + T45.nhin + 28, 0.4],
+];
+
+const voiceRanges = VOICE_IDS.map((id) => [f(SEG[id].start), f(SEG[id].end)]);
+
+export const Ep01Collage: React.FC = () => {
+  return (
+    <AbsoluteFill style={{backgroundColor: '#F5F0E7'}}>
+      <Sequence name="SC01 · Hook" from={SCENE.sc1} durationInFrames={SCENE.sc2 + WIPE}>
+        <Sc1Hook />
+      </Sequence>
+      <Sequence name="SC02 · Chỉ nhìn sản phẩm" from={SCENE.sc2} durationInFrames={SC2_LEN}>
+        <Sc2Product />
+      </Sequence>
+      <Sequence name="SC03 · Công thức" from={SCENE.sc3} durationInFrames={SC3_LEN + WIPE}>
+        <Sc3Formula />
+      </Sequence>
+      <Sequence name="SC04–05 · 3 bìa + kết" from={SCENE.sc4} durationInFrames={DURATION - SCENE.sc4}>
+        <Sc45Covers />
+      </Sequence>
+      <Grain opacity={0.08} />
+
+      {/* Giọng đọc */}
+      {VOICE_IDS.map((id) => (
+        <Sequence key={id} name={`Giọng ${id}`} from={f(SEG[id].start)} layout="none">
+          <Audio src={staticFile(`ep01c/voice/${id}.wav`)} volume={1} />
+        </Sequence>
+      ))}
+      {/* SFX tự tổng hợp */}
+      {SFX.map(([name, at, vol], i) => (
+        <Sequence key={`sfx-${i}`} name={`SFX ${name}`} from={Math.max(0, at)} durationInFrames={30} layout="none">
+          <Audio src={sfx(name)} volume={vol} />
+        </Sequence>
+      ))}
+      {/* Nhạc nền (Mixkit, giấy phép Mixkit) — tự hạ khi có lời */}
+      <Audio
+        src={staticFile('assets/audio/bgm.mp3')}
+        trimBefore={48}
+        volume={(fr) => {
+          const talking = voiceRanges.some(([a, b]) => fr >= a - 4 && fr < b + 4);
+          const fadeOut = Math.min(1, Math.max(0, (DURATION - fr) / 30));
+          const fadeIn = Math.min(1, fr / 10);
+          return (talking ? 0.055 : 0.1) * fadeOut * fadeIn;
+        }}
+      />
+    </AbsoluteFill>
+  );
+};

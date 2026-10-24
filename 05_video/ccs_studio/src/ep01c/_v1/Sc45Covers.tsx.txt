@@ -1,0 +1,239 @@
+// SC04 HERO + SC05 PAYOFF — một chuyển động camera liền mạch:
+// son tách 3 → lướt qua 3 bìa tạp chí → lùi ra thấy cả bảng → khung kết.
+import React from 'react';
+import {useCurrentFrame, useVideoConfig} from 'remotion';
+import {Cover1, Cover2, Cover3, FlyingLipstick} from './Covers';
+import {PaperWipe} from './common';
+import {cue, SCENE, segStart} from './timing';
+import {ease, easeOut, onTwos, pop, shake, slam} from '../lab/fx';
+import {Ticket} from '../lab/Cards';
+import {RedStroke, Sweep, circlePath} from '../lab/Marks';
+import {Folio, PaperBG} from '../lab/Paper';
+import {CollageHand, Lipstick} from '../lab/Props';
+import {TornScrap} from '../lab/Scrap';
+import {HandNote, Headline, Kicker} from '../lab/Type';
+import {C, F} from '../lab/theme';
+
+const r = (abs: number) => abs - SCENE.sc4;
+export const T45 = {
+  split: 2,
+  wipe: 8,
+  pan1: r(segStart('s4b')) - 8,
+  pan2: r(segStart('s4c')) - 8,
+  panDur: 14,
+  zoom: r(SCENE.sc5),
+  zoomDur: 22,
+  mot: r(cue('s5a', 'mot_thoi')),
+  doi: r(cue('s5a', 'doi_tinh')),
+  ba: r(cue('s5a', 'ba_huong')),
+  lan: r(cue('s5b', 'lan_toi')),
+  dung: r(cue('s5b', 'dung_chi')),
+  nhin: r(cue('s5b', 'hay_nhin')),
+};
+
+const COVERS = [Cover1, Cover2, Cover3];
+const BOARD = {y: 880, scale: 0.29, gap: 340};
+
+/** Phần mở: son đập xuống bàn rồi tách thành 3 bản sao. */
+const SplitIntro: React.FC = () => {
+  const frame = useCurrentFrame();
+  const sl = slam(frame, 0);
+  const sp = easeOut(onTwos(frame), T45.split, T45.split + 8, 0, 1);
+  const sh = shake(frame, 0, 8, 10);
+  return (
+    <PaperBG color={C.ivory} grid>
+      <div style={{position: 'absolute', inset: 0, translate: `${sh.x}px ${sh.y}px`}}>
+        {[-1, 0, 1].map((k) => (
+          <Lipstick
+            key={k}
+            w={170}
+            style={{
+              left: 455 + k * 310 * sp,
+              top: 640 - Math.abs(k) * 40 * sp,
+              rotate: `${k * 14 * sp}deg`,
+              scale: String(sl.scale),
+              opacity: k === 0 ? sl.opacity : sp > 0.05 ? 1 : 0,
+            }}
+          />
+        ))}
+        <Kicker text="1 SẢN PHẨM → 3 THẾ GIỚI" color={C.burgundy} size={42} style={{left: 90, top: 300, opacity: sp}} />
+      </div>
+    </PaperBG>
+  );
+};
+
+/** Khung kết — cũng là ảnh cover của video. */
+export const EndFrame: React.FC<{start: number}> = ({start}) => {
+  const frame = useCurrentFrame();
+  const {fps} = useVideoConfig();
+  const t = start + 6;
+  const chips: [string, string][] = [
+    [C.butter, 'MAKEUP 5 PHÚT'],
+    [C.peri, 'NEWBIE MAKEUP'],
+    [C.lime, 'MAKEUP TỰ NHIÊN'],
+  ];
+  return (
+    <PaperBG color={C.burgundy}>
+      <Folio color={C.ivory} />
+      <Kicker text="TAKEAWAY · N°01" color={C.butter} size={36} style={{left: 92, top: 490}} />
+      <Headline
+        start={t}
+        size={142}
+        lineHeight={1.1}
+        lines={[{text: 'ĐỔI GÓC NHÌN.', color: C.ivory}, {text: 'ĐỔI CONTENT.', color: C.butter}]}
+        style={{left: 88, top: 575}}
+      />
+      <Sweep start={t + 10} dur={8} color={C.tomato} style={{left: 90, top: 912, width: 560, height: 10}} />
+      {frame >= t + 12 ? <HandNote text="nhìn người dùng, không chỉ nhìn sản phẩm" color={C.ivory} size={44} rot={-2} style={{left: 92, top: 940}} /> : null}
+
+      <Lipstick w={92} style={{left: 820, top: 1020, rotate: '16deg', scale: String(pop(frame, t + 12, fps))}} />
+      {chips.map(([col, txt], i) => (
+        <TornScrap
+          key={txt}
+          w={236}
+          h={120}
+          color={col}
+          seed={`end-${i}`}
+          style={{left: 92 + i * 236, top: 1080 + [0, 18, 6][i], rotate: `${[-4, 3, -2][i]}deg`, scale: String(pop(frame, t + 14 + i * 3, fps))}}
+        >
+          <div style={{position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
+            <div style={{fontFamily: F.label, fontWeight: 600, fontSize: 22, letterSpacing: 2, color: C.burgundy}}>ANGLE 0{i + 1}</div>
+            <div style={{fontFamily: F.label, fontWeight: 800, fontSize: 32, color: C.ink, whiteSpace: 'nowrap'}}>{txt}</div>
+          </div>
+        </TornScrap>
+      ))}
+
+      {/* Logo nhỏ */}
+      <div
+        style={{
+          position: 'absolute',
+          left: 92,
+          top: 1310,
+          display: 'flex',
+          alignItems: 'center',
+          gap: 16,
+          scale: String(pop(frame, t + 22, fps)),
+          transformOrigin: 'left center',
+        }}
+      >
+        <div style={{backgroundColor: C.ivory, padding: '8px 18px 4px', fontFamily: F.headline, fontSize: 52, color: C.burgundy, letterSpacing: 2}}>CONTENT CÓ SỐ</div>
+        <div style={{fontFamily: F.label, fontWeight: 800, fontSize: 26, letterSpacing: 3, color: C.ivory, lineHeight: 1.1}}>
+          THE CONTENT LAB
+          <br />
+          <span style={{fontWeight: 600, opacity: 0.8}}>giải mã nội dung hiệu quả</span>
+        </div>
+      </div>
+    </PaperBG>
+  );
+};
+
+export const Sc45Covers: React.FC = () => {
+  const frame = useCurrentFrame();
+  const {fps} = useVideoConfig();
+  const T = T45;
+
+  // Camera dải bìa
+  const camX = ease(frame, T.pan1, T.pan1 + T.panDur, 0, -1080) + ease(frame, T.pan2, T.pan2 + T.panDur, 0, -1080);
+  const z = ease(frame, T.zoom, T.zoom + T.zoomDur, 0, 1);
+
+  // Bàn tay đặt bìa cuối lên bảng
+  const handIn = ease(onTwos(frame), T.zoom + 10, T.zoom + 22, 0, 1) * (1 - ease(onTwos(frame), T.zoom + 30, T.zoom + 42, 0, 1));
+  const nudge = ease(frame, T.zoom + 18, T.zoom + 22, 0, 1) * (1 - ease(frame, T.zoom + 22, T.zoom + 30, 0, 1));
+
+  const showBoard = frame >= T.zoom;
+  const endOn = frame >= T.nhin;
+
+  return (
+    <PaperBG color={C.ivory} grid>
+      {frame < T.wipe + 12 ? <SplitIntro /> : null}
+
+      <PaperWipe seed="w4" start={T.wipe} dur={10}>
+        <PaperBG color={C.ivory} grid>
+          {/* Bảng tổng kết (SC05) nằm dưới các bìa */}
+          {showBoard ? (
+            <>
+              <Folio right="N°01 · BẢNG PHÂN TÍCH" />
+              {frame >= T.mot ? (
+                <>
+                  <Lipstick w={62} style={{left: 214, top: 288, rotate: '-8deg', scale: String(pop(frame, T.mot, fps))}} />
+                  <Headline start={T.mot} size={118} lines={[{text: '1 SẢN PHẨM'}]} style={{left: 300, top: 300}} />
+                </>
+              ) : null}
+              {[0, 1, 2].map((i) => (
+                <RedStroke
+                  key={i}
+                  d={`M 540 440 C 540 500, ${540 + (i - 1) * 340} 470, ${540 + (i - 1) * 340} 580`}
+                  start={T.doi + i * 3}
+                  dur={10}
+                  width={6}
+                />
+              ))}
+              <Headline
+                start={T.ba}
+                size={108}
+                align="center"
+                lines={[{text: '3 CONTENT ANGLES', color: C.burgundy}]}
+                style={{left: 90, width: 900, top: 1190}}
+              />
+              {frame >= T.lan ? (
+                <Ticket
+                  w={900}
+                  stub="FIX"
+                  style={{left: 90, top: 1330, translate: `${ease(onTwos(frame), T.lan, T.lan + 8, -1100, 0)}px 0px`, rotate: '-1deg'}}
+                >
+                  <div style={{fontFamily: F.headline, fontSize: 64, color: C.ink, whiteSpace: 'nowrap', lineHeight: 1.1}}>
+                    AI <span style={{color: C.burgundy}}>+</span> BỐI CẢNH <span style={{color: C.burgundy}}>+</span> VẤN ĐỀ
+                  </div>
+                </Ticket>
+              ) : null}
+              <RedStroke d="M 290 372 C 450 352, 640 380, 800 360" start={T.dung} dur={8} width={14} />
+              <RedStroke d={circlePath(150, 1335, 740, 90)} start={T.dung + 10} dur={12} width={9} />
+            </>
+          ) : null}
+
+          {/* Ba bìa tạp chí */}
+          {COVERS.map((Cover, i) => {
+            const stripX = 540 + i * 1080 + camX; // tâm bìa khi ở chế độ dải
+            const visibleStrip = Math.abs(stripX - 540) < 1300;
+            if (!visibleStrip && z === 0) return null;
+            const bx = 540 + (i - 1) * BOARD.gap;
+            const cx = stripX + (bx - stripX) * z;
+            const cy = 960 + (BOARD.y - 960) * z;
+            const sc = 1 + (BOARD.scale - 1) * z;
+            const rot = (i - 1) * 5 * z;
+            const extra = i === 2 ? {x: -16 * nudge, y: -22 * nudge} : {x: 0, y: 0};
+            return (
+              <div
+                key={i}
+                style={{
+                  position: 'absolute',
+                  left: cx - 540 + extra.x,
+                  top: cy - 960 + extra.y,
+                  width: 1080,
+                  height: 1920,
+                  scale: String(sc),
+                  rotate: `${rot}deg`,
+                  boxShadow: z > 0 ? `${28 * z}px ${40 * z}px 0 rgba(36,35,33,0.22)` : undefined,
+                  outline: z > 0 ? `${Math.round(22 * z)}px solid ${C.white}` : undefined,
+                }}
+              >
+                <Cover par={(stripX - 540) * (1 - z)} />
+              </div>
+            );
+          })}
+
+          {handIn > 0 ? <CollageHand w={260} style={{left: 830, top: 1960 - handIn * 880, rotate: '-16deg'}} /> : null}
+          <FlyingLipstick start={T.pan1} dur={T.panDur} />
+          <FlyingLipstick start={T.pan2} dur={T.panDur} />
+        </PaperBG>
+      </PaperWipe>
+
+      {endOn ? (
+        <PaperWipe seed="wEnd" start={T.nhin} dur={10}>
+          <EndFrame start={T.nhin} />
+        </PaperWipe>
+      ) : null}
+    </PaperBG>
+  );
+};
+

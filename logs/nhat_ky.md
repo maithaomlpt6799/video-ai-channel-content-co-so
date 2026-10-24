@@ -24,3 +24,14 @@
 2026-10-24 22:44 | Claude/Research | — | — | Theo lệnh CEO: đề xuất định hướng Ep02–Ep14 cho Manager/CEO: 02_research/20261024_dinh_huong_cac_tap_tiep.md (TikTok chặn giữa chừng, số chưa đủ)
 2026-10-24 22:50 | Claude/Video | CCS-001 | DANG_LAM -> CHO_CEO | Theo lệnh trực tiếp CEO (khác luật 6 — kịch bản, concept chưa duyệt): v01 dựng xong (Harper x1,05, hook B, Bé Tiền Tít), gói kiểm ở videos/CCS-001/04_dung/v01/audit_pack; bản Drive Content_Co_So/videos/CCS-001/CCS-001_v01.mp4
 2026-10-24 22:46 | Claude/Manager | — | — | Giải nén ccs_buoc7-8.zip theo lệnh CEO: AGENTS.md, vai/claude_manager.md, room/SPEC.md. Commit chưa gồm 05_video/ccs_studio/ (có dự án 3CE, chờ CEO quyết vì repo public)
+2026-10-24 23:05 | Codex/Review | CCS-001 | CHO_CEO -> BI_CHAN | Nhận audit v01, dừng theo mục 4: A03/A04/A08/A09 chưa xác nhận quyền dùng (luật 8); thiếu file kịch bản đã duyệt để đối chiếu nguyên văn. Đã ghi Nhắc và báo CEO trong chat Team Audit Video.
+2026-10-24 23:11 | Claude/Xay_he_thong | — | — | Bước 7 Telegram: room/server/ (bot + bản tin), room/README.md, launchd com.ccs.room. Kiểm thử 1,2,3,4,7,8 đạt; 2 dòng thử trong ceo_inbox.jsonl đã đánh dấu KHÔNG áp
+2026-10-24 23:15 | Claude/Research | — | — | CEO nói "ghi": thêm bài học quét TikTok vào vai/claude_research.md
+2026-10-24 23:17 | CEO (web) | T_20261024_thu_giao_viec_xoa_sau_kiem_thu | — -> CHUA_LAM | Giao việc cho Team Manager: THỬ giao việc — xoá sau kiểm thử · hạn 2026-10-31
+2026-10-24 23:18 | Claude/Research | — | — | Theo CEO: cập nhật 02_research/20261024_dinh_huong_cac_tap_tiep.md — Ep02–04 = CCS-002/003/004 (Sheet), gộp B1 vào CCS-004, ý cũ thành nhóm dự bị
+2026-10-24 23:18 | Claude/Xay_he_thong | — | — | Bước 8 web phòng agent bản 1: room/web/ + room/server/web.js, http://localhost:4747. Kiểm thử 5, 6 đạt; dòng thử inbox (web) đã đánh dấu KHÔNG áp. Thẻ thử CCS-999, T_20261024_thu_giao_viec_xoa_sau_kiem_thu chờ CEO cho xoá
+2026-10-24 23:19 | Claude/Xay_he_thong | — | — | Theo lệnh CEO: xoá thẻ thử board/CCS-999.md, board/T_20261024_thu_giao_viec_xoa_sau_kiem_thu.md và 6 dòng thử trong logs/ceo_inbox.jsonl (inbox trống). Bước 7 + 8 xong, chờ Team Manager commit
+2026-10-24 23:20 | Codex/Kich_ban | CCS-001 | BI_CHAN -> BI_CHAN | Tạo videos/CCS-001/02_kich_ban/CCS-001_Kich_ban_video_Content_Co_So.docx theo file và yêu cầu CEO; giữ nguyên người giữ thẻ.
+2026-10-24 23:20 | Codex/Kich_ban | CCS-001 | BI_CHAN -> BI_CHAN | Tạo videos/CCS-001/02_kich_ban/kich_ban.md theo file và yêu cầu CEO; giữ nguyên người giữ thẻ.
+2026-10-24 23:20 | Codex/Kich_ban | CCS-001 | BI_CHAN -> BI_CHAN | Tạo videos/CCS-001/02_kich_ban/quy_cach_xuat_kich_ban.md theo file và yêu cầu CEO; giữ nguyên người giữ thẻ.
+2026-10-24 23:22 | Claude/Manager | — | — | Theo lệnh CEO: commit 05_video/ccs_studio/, ẩn phần 3CE (src/tiktok3ce/, public/assets/) bằng .gitignore

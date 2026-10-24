@@ -1,0 +1,15 @@
+{
+  "_note": "Asset cho Tập 01 kênh kiến thức Content. Mỗi đoạn thoại một file (b01–b07). Thu một lượt liền cũng được — gửi Claude để tách. Sau khi thêm file: npm run assets.",
+  "assets": [
+    { "key": "voice_b01", "type": "audio", "required": true, "files": ["ep01/voice/b01.wav", "ep01/voice/b01.mp3", "ep01/voice/b01.m4a"], "ratio": "-", "purpose": "Hook" },
+    { "key": "voice_b02", "type": "audio", "required": true, "files": ["ep01/voice/b02.wav", "ep01/voice/b02.mp3", "ep01/voice/b02.m4a"], "ratio": "-", "purpose": "Vấn đề: cách thường" },
+    { "key": "voice_b03", "type": "audio", "required": true, "files": ["ep01/voice/b03.wav", "ep01/voice/b03.mp3", "ep01/voice/b03.m4a"], "ratio": "-", "purpose": "Công thức 3 ô" },
+    { "key": "voice_b04", "type": "audio", "required": true, "files": ["ep01/voice/b04.wav", "ep01/voice/b04.mp3", "ep01/voice/b04.m4a"], "ratio": "-", "purpose": "Ví dụ điền 3 ô" },
+    { "key": "voice_b05", "type": "audio", "required": true, "files": ["ep01/voice/b05.wav", "ep01/voice/b05.mp3", "ep01/voice/b05.m4a"], "ratio": "-", "purpose": "Ghép thành video" },
+    { "key": "voice_b06", "type": "audio", "required": true, "files": ["ep01/voice/b06.wav", "ep01/voice/b06.mp3", "ep01/voice/b06.m4a"], "ratio": "-", "purpose": "Nhân ra 27 ý tưởng" },
+    { "key": "voice_b07", "type": "audio", "required": true, "files": ["ep01/voice/b07.wav", "ep01/voice/b07.mp3", "ep01/voice/b07.m4a"], "ratio": "-", "purpose": "CTA" },
+    { "key": "bgm", "type": "audio", "required": false, "files": ["channel/bgm.mp3", "channel/bgm.wav", "channel/bgm.m4a"], "ratio": "-", "purpose": "Nhạc nền nhẹ dùng chung cho kênh" },
+    { "key": "sfx_marker", "type": "audio", "required": false, "files": ["channel/sfx/marker.wav", "channel/sfx/marker.mp3"], "ratio": "-", "purpose": "Tiếng bút dạ khi vẽ (lặp, âm lượng nhỏ)" },
+    { "key": "sfx_pop", "type": "audio", "required": false, "files": ["channel/sfx/pop.wav", "channel/sfx/pop.mp3"], "ratio": "-", "purpose": "Pop khi sang trang giấy mới" }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "found": {
+    "voice_b01": {
+      "file": "ep01/voice/b01.wav",
+      "durationInSeconds": 3.756
+    },
+    "voice_b02": {
+      "file": "ep01/voice/b02.wav",
+      "durationInSeconds": 5.916
+    },
+    "voice_b03": {
+      "file": "ep01/voice/b03.wav",
+      "durationInSeconds": 7.196
+    },
+    "voice_b04": {
+      "file": "ep01/voice/b04.wav",
+      "durationInSeconds": 8.876
+    },
+    "voice_b05": {
+      "file": "ep01/voice/b05.wav",
+      "durationInSeconds": 8.204
+    },
+    "voice_b06": {
+      "file": "ep01/voice/b06.wav",
+      "durationInSeconds": 7.852
+    },
+    "voice_b07": {
+      "file": "ep01/voice/b07.wav",
+      "durationInSeconds": 6.54
+    }
+  },
+  "missingRequired": [],
+  "missingOptional": [
+    "bgm",
+    "sfx_marker",
+    "sfx_pop"
+  ]
+}

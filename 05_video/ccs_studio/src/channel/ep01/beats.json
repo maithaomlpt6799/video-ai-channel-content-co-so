@@ -1,0 +1,196 @@
+{
+  "_note": "Kịch bản Tập 01. 'text' = chữ hiện trên phụ đề; 'say' (tuỳ chọn) = cách đọc cho máy (số → chữ). Sửa ở đây rồi chạy lại 'Tao giong + Render Ep01.command'.",
+  "beats": [
+    {
+      "id": "b01",
+      "page": "hook",
+      "holdSec": 0.9,
+      "chunks": [
+        {
+          "text": "Bạn không thiếu ý tưởng."
+        },
+        {
+          "text": "Bạn đang thiếu"
+        },
+        {
+          "text": "đúng một công thức này."
+        }
+      ],
+      "highlight": [
+        "ý tưởng",
+        "công thức"
+      ],
+      "text": "Bạn không thiếu ý tưởng. Bạn đang thiếu đúng một công thức này."
+    },
+    {
+      "id": "b02",
+      "page": "compare",
+      "chunks": [
+        {
+          "text": "Đa số người mới ngồi nghĩ:"
+        },
+        {
+          "text": "hôm nay quay gì?"
+        },
+        {
+          "text": "Rồi lướt TikTok cả tiếng,"
+        },
+        {
+          "text": "vẫn trắng tay."
+        }
+      ],
+      "highlight": [
+        "quay gì",
+        "trắng tay"
+      ],
+      "text": "Đa số người mới ngồi nghĩ: hôm nay quay gì? Rồi lướt TikTok cả tiếng, vẫn trắng tay."
+    },
+    {
+      "id": "b03",
+      "page": "compare",
+      "holdSec": 0.8,
+      "chunks": [
+        {
+          "text": "Người làm ra số"
+        },
+        {
+          "text": "thì không nghĩ chủ đề."
+        },
+        {
+          "text": "Họ điền 3 ô:",
+          "say": "Họ điền ba ô:"
+        },
+        {
+          "text": "Ai,"
+        },
+        {
+          "text": "Nỗi đau,"
+        },
+        {
+          "text": "và Khoảnh khắc."
+        }
+      ],
+      "highlight": [
+        "3 ô",
+        "ai",
+        "nỗi đau",
+        "khoảnh khắc"
+      ],
+      "text": "Người làm ra số thì không nghĩ chủ đề. Họ điền ba ô: Ai, Nỗi đau, và Khoảnh khắc."
+    },
+    {
+      "id": "b04",
+      "page": "example",
+      "chunks": [
+        {
+          "text": "Ví dụ nhé."
+        },
+        {
+          "text": "Ai: mẹ bỉm đi làm."
+        },
+        {
+          "text": "Nỗi đau: không kịp nấu bữa sáng."
+        },
+        {
+          "text": "Khoảnh khắc: 6h30 sáng.",
+          "say": "Khoảnh khắc: sáu giờ rưỡi sáng."
+        }
+      ],
+      "highlight": [
+        "mẹ bỉm đi làm",
+        "không kịp nấu bữa sáng",
+        "6h30 sáng"
+      ],
+      "text": "Ví dụ nhé. Ai: mẹ bỉm đi làm. Nỗi đau: không kịp nấu bữa sáng. Khoảnh khắc: sáu giờ rưỡi sáng."
+    },
+    {
+      "id": "b05",
+      "page": "example",
+      "holdSec": 0.8,
+      "chunks": [
+        {
+          "text": "Ghép lại, bạn có ngay một video:"
+        },
+        {
+          "text": "“6h30 sáng,",
+          "say": "sáu giờ rưỡi sáng,"
+        },
+        {
+          "text": "10 phút cho bữa sáng cả nhà”.",
+          "say": "mười phút cho bữa sáng cả nhà."
+        },
+        {
+          "text": "Người xem thấy"
+        },
+        {
+          "text": "chính mình trong đó."
+        }
+      ],
+      "highlight": [
+        "chính mình"
+      ],
+      "text": "Ghép lại, bạn có ngay một video: sáu giờ rưỡi sáng, mười phút cho bữa sáng cả nhà. Người xem thấy chính mình trong đó."
+    },
+    {
+      "id": "b06",
+      "page": "multiply",
+      "holdSec": 1.4,
+      "chunks": [
+        {
+          "text": "Đổi mỗi ô một lựa chọn"
+        },
+        {
+          "text": "là ra ý tưởng mới."
+        },
+        {
+          "text": "3 người,",
+          "say": "Ba người,"
+        },
+        {
+          "text": "3 nỗi đau,",
+          "say": "ba nỗi đau,"
+        },
+        {
+          "text": "3 khoảnh khắc:",
+          "say": "ba khoảnh khắc:"
+        },
+        {
+          "text": "27 video.",
+          "say": "hai mươi bảy video."
+        }
+      ],
+      "highlight": [
+        "ý tưởng mới",
+        "27 video"
+      ],
+      "text": "Đổi mỗi ô một lựa chọn là ra ý tưởng mới. Ba người, ba nỗi đau, ba khoảnh khắc: hai mươi bảy video."
+    },
+    {
+      "id": "b07",
+      "page": "cta",
+      "holdSec": 1.2,
+      "chunks": [
+        {
+          "text": "Comment “ý tưởng”,",
+          "say": "Comment “ý tưởng”,"
+        },
+        {
+          "text": "mình gửi bảng 3 ô này.",
+          "say": "mình gửi bảng ba ô này."
+        },
+        {
+          "text": "Follow để xem phần 2:",
+          "say": "Follow để xem phần hai:"
+        },
+        {
+          "text": "biến ý tưởng thành hook."
+        }
+      ],
+      "highlight": [
+        "comment",
+        "phần 2"
+      ],
+      "text": "Comment “ý tưởng”, mình gửi bảng ba ô này. Follow để xem phần hai: biến ý tưởng thành hook."
+    }
+  ]
+}

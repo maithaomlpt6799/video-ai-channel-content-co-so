@@ -1,0 +1,49 @@
+{
+  "name": "remotion-video",
+  "version": "1.0.0",
+  "description": "My Remotion video",
+  "repository": {},
+  "license": "UNLICENSED",
+  "engines": {
+    "node": "^20.19.0 || ^22.13.0 || >=24"
+  },
+  "private": true,
+  "dependencies": {
+    "@remotion/cli": "4.0.537",
+    "@remotion/fonts": "4.0.537",
+    "@remotion/media": "4.0.537",
+    "@remotion/media-parser": "4.0.537",
+    "@remotion/paths": "4.0.537",
+    "@remotion/zod-types": "4.0.537",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "remotion": "4.0.537",
+    "zod": "4.5.4"
+  },
+  "devDependencies": {
+    "@remotion/eslint-config-flat": "4.0.537",
+    "@types/react": "19.2.7",
+    "@types/web": "0.0.166",
+    "eslint": "10.12.0",
+    "prettier": "3.8.1",
+    "typescript": "5.9.3"
+  },
+  "scripts": {
+    "assets": "node scripts/scan-assets.mjs",
+    "dev": "npm run assets && remotion studio",
+    "render": "npm run assets && remotion render TikTok3CEVideoToLive out/tiktok-3ce-video-to-live.mp4 --codec=h264",
+    "render:draft": "npm run assets && remotion render TikTok3CEVideoToLive out/tiktok-3ce-draft.mp4 --codec=h264 --scale=0.5",
+    "still": "npm run assets && remotion still TikTok3CEVideoToLive out/frame.png --frame=60",
+    "build": "remotion bundle",
+    "upgrade": "remotion upgrade",
+    "lint": "eslint src && tsc",
+    "render:ep01": "npm run assets && remotion render Ep01-KhongThieuYTuong out/ep01-khong-thieu-y-tuong.mp4 --codec=h264",
+    "voice:ep01": "node scripts/tts-elevenlabs.mjs ep01",
+    "render:ccs01": "remotion render Ep01-ContentCoSo-v2 out/content-co-so-ep01-v2.mp4 --codec=h264 --crf=18",
+    "cover:ccs01": "remotion still Ep01-Cover-A out/cover-A.png && remotion still Ep01-Cover-B out/cover-B.png && remotion still Ep01-Cover-C out/cover-C.png",
+    "render:ccs001": "remotion render CCS-001-v01 out/ccs-001-v01-raw.mp4 --codec=h264 --crf=18"
+  },
+  "allowScripts": {
+    "esbuild": false
+  }
+}
