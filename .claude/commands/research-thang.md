@@ -1,8 +1,8 @@
 ---
-description: Research thị trường và đối thủ (2 tuần một lần)
+description: Báo cáo research tháng (ngày ~25)
 ---
 Giao việc này cho subagent `research`.
 
-Chạy lệnh `/research-thi-truong` trong sổ tay Research.
+Chạy `/research-thang` trong sổ tay Research.
 
 Subagent làm xong thì báo lại CEO đúng 3 ý: file gì, ở đâu, CEO cần làm gì tiếp.

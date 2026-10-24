@@ -3,7 +3,7 @@
 CEO gọi: "viết kịch bản <ID>" hoặc "sửa kịch bản <ID>: <ý CEO>".
 
 ## Đầu vào
-`videos/<ID>/01_suon/suon.md` (bản CEO đã duyệt — kiểm bảng Duyệt trong `board/<ID>.md`) + `02_research/tap_<ID>.md` + Bible.
+`videos/<ID>/01_suon/suon.md` (bản CEO đã duyệt — kiểm bảng Duyệt trong `board/<ID>.md`) + `videos/<ID>/01_suon/research.md` + dòng của tập trong `00_ceo/ke_hoach/<yyyy-mm>.md` (keyword, trend) + Bible.
 Sườn chưa có dấu duyệt → không viết, báo CEO (luật 6).
 
 ## Viết
@@ -12,6 +12,7 @@ Sườn chưa có dấu duyệt → không viết, báo CEO (luật 6).
 - Giọng: người cùng nghề chia sẻ, không giảng bài, không quảng cáo.
 - Độ dài khớp "Độ dài mục tiêu" của sườn (ước tốc độ đọc trung bình, ghi số chữ).
 - Chỉ dùng số liệu có trong sườn/research, giữ nguyên nguồn.
+- Có mặt keyword của tập theo kế hoạch tháng, đặt tự nhiên trong lời.
 
 ## File ra: `videos/<ID>/02_kich_ban/kich_ban.md` (bản sửa: `kich_ban_v2.md`, giữ bản cũ)
 Giữ đúng khuôn để công cụ dựng đọc được:
@@ -48,3 +49,9 @@ Chữ trên màn hình: …
 Không bao giờ tự ghi `[Approved]` hay `Content Approval: Approved`.
 
 Xong → thẻ `CHO_CEO` (điểm duyệt "Nội dung"), một dòng nhật ký.
+CEO duyệt ngay trong chat với bạn → ghi vào bảng Duyệt của thẻ (nguyên văn, "qua Codex", thời gian), người giữ `Claude/Creative`, báo CEO câu dán cho Claude: `/concept <ID>`.
+Duyệt cuốn chiếu: xong tập nào nộp tập đó, không chờ đủ cả tháng.
+
+## Bài học từ CEO
+
+Chỉ thêm dòng khi CEO bảo "ghi". Định dạng: `- yyyy-mm-dd: <bài học>`

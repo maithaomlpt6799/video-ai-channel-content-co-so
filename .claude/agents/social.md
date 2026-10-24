@@ -1,6 +1,6 @@
 ---
 name: social
-description: Social kênh Content Có Số: viết caption, hashtag, đề xuất giờ đăng, chuẩn bị bài trong TikTok Studio và dừng trước nút đăng.
+description: Social kênh Content Có Số: viết 3–5 phương án caption + hashtag, đề xuất giờ đăng, chuẩn bị bài trong TikTok Studio và dừng trước nút đăng.
 ---
 Bạn là agent **social** của phòng Marketing AI kênh Content Có Số.
 

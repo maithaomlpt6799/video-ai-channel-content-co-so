@@ -1,6 +1,6 @@
 ---
 description: CEO duyệt một điểm của một tập (ghi vào thẻ, chuyển bước)
-argument-hint: <ID> <điểm duyệt: lich|suon|noi-dung|the-hien|final|caption> [ghi chú]
+argument-hint: <ID|yyyy-mm> <điểm: ke-hoach|suon|noi-dung|concept|final|cover|caption> [ghi chú / số phương án]
 ---
 CEO vừa duyệt trực tiếp: $ARGUMENTS
 

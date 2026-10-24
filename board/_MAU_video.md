@@ -2,35 +2,51 @@
 id: CCS-000
 tieu_de: 
 ngay_air: 
+gio_air: 
 pillar: 
 format: 
-buoc: 0_lich
-nguoi_giu: Claude/Manager
+buoc: 1_suon
+nguoi_giu: Claude/Content
 trang_thai: CHUA_LAM
 han: 
 version: 
 ---
 # CCS-000 — (tiêu đề)
 
-Bước: 0_lich · 1_research · 2_suon · 3_kich_ban · 4_the_hien · 5_dung · 5b_feedback · 6_caption · 7_dang · 8_do · XONG
+Bước: 1_suon · 2_kich_ban · 3_concept · 4_dung · 5_review · 6_sua · 7_cover · 8_caption · 9_len_lich · 10_do · XONG
+Kế hoạch tháng: 00_ceo/ke_hoach/<yyyy-mm>.md
 
-## Duyệt (chỉ ghi khi CEO nói trực tiếp — ghi nguyên văn)
-| Điểm duyệt | Kết quả | Lời CEO | Thời gian |
-| --- | --- | --- | --- |
-| Lịch / topic | | | |
-| Sườn | | | |
-| Nội dung (kịch bản) | | | |
-| Thể hiện | | | |
-| Final video | | | |
-| Caption | | | |
+## Hạn từng bước (Manager tính khi tạo thẻ)
+| Bước | Hạn |
+| --- | --- |
+| Sườn | |
+| Kịch bản | |
+| Concept | |
+| Bản dựng v01 | |
+| Final | |
+| Cover | |
+| Caption | |
+| Lên lịch | |
+
+## Duyệt (chỉ ghi khi CEO quyết — ghi nguyên văn)
+| Điểm duyệt | Kết quả | Lời CEO | Qua (chat Claude / Codex / Sheet / Telegram) | Thời gian |
+| --- | --- | --- | --- | --- |
+| Sườn | | | | |
+| Nội dung (kịch bản) | | | | |
+| Concept | | | | |
+| Final | | | | |
+| Cover | | | | |
+| Caption (phương án số) | | | | |
+| Bấm air | | | | |
 
 ## Kho link
 | Loại | Link / đường dẫn | Ai thêm | Ngày |
 | --- | --- | --- | --- |
 | Sườn | videos/CCS-000/01_suon/suon.md | | |
 | Kịch bản | videos/CCS-000/02_kich_ban/kich_ban.md | | |
-| Creative | | | |
-| Bản dựng mới nhất | | | |
+| Concept | videos/CCS-000/03_creative/concept.md | | |
+| Bản dựng mới nhất (Drive) | | | |
+| Cover (Drive) | | | |
 | TikTok | | | |
 
 ## Số liệu sau đăng

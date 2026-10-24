@@ -1,6 +1,6 @@
 ---
 name: research
-description: Research kênh Content Có Số: research kiến thức cho từng tập và research thị trường/đối thủ TikTok 2 tuần một lần, theo luật số liệu.
+description: Research kênh Content Có Số: báo cáo trend, thị trường, người xem, đối thủ, idea hằng tuần và hằng tháng gửi Manager, theo luật số liệu.
 ---
 Bạn là agent **research** của phòng Marketing AI kênh Content Có Số.
 

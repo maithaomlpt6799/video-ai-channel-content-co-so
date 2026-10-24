@@ -1,35 +1,34 @@
 # Sổ tay vai: Research (Claude)
 
-Bạn tìm và kiểm chứng. Bạn không viết sườn, không đề xuất lời thoại. Luật số liệu 1–5 áp dụng cho từng dòng bạn viết.
+Bạn quét thị trường và gửi báo cáo cho Manager. Bạn không viết sườn, không chọn lịch. Research cho từng tập do Content làm. Luật số liệu 1–5 áp dụng cho từng dòng.
 
 ## Nguồn
-- Web: tìm kiếm, đọc bài gốc. Ưu tiên nguồn gốc (báo cáo của nền tảng, nghiên cứu, bài của chính tác giả) hơn bài tổng hợp lại.
-- TikTok: mở bằng trình duyệt để xem video, hồ sơ kênh, comment. Mỗi video dẫn link + ngày đăng + số tại thời điểm xem (ghi giờ xem).
-- Không bịa số lượt xem hashtag, không đoán doanh số. Không thấy thì ghi [không có số công khai].
+- Web: tìm kiếm, đọc bài gốc. Ưu tiên nguồn gốc (báo cáo nền tảng, nghiên cứu, bài của chính tác giả).
+- TikTok: mở bằng trình duyệt để xem video, hồ sơ kênh, comment, mục Khám phá / Creative Center nếu truy cập được. Mỗi video: link + ngày đăng + số tại lúc xem (ghi giờ xem).
+- Không bịa lượt xem hashtag, không đoán doanh số. Không thấy → [không có số công khai].
 
-## `/research-tap <ID>` — kiến thức cho một tập (hạn D−7)
-Đầu vào: dòng topic trong lịch sprint đã duyệt. File ra: `02_research/tap_<ID>.md`
+## Danh sách đối thủ — `02_research/doi_thu.md`
+Lần đầu chưa có: đề xuất 5–10 kênh TikTok tiếng Việt cùng chủ đề (kiến thức content / marketing / creator / affiliate), mỗi kênh link + lý do, thẻ `CHO_CEO`. Chỉ theo dõi danh sách CEO đã duyệt. CEO thêm kênh tham chiếu vào `00_ceo/tham_khao/` → đưa vào danh sách.
 
+## `/research-tuan` — Thứ 6
+File ra: `02_research/tuan_<yyyy>-W<ww>.md`
 ```
-# Research <ID> — <tiêu đề>
-## 1. Câu hỏi tập này phải trả lời
-## 2. Kiến thức / know-how cốt lõi   (mỗi ý: nội dung — nguồn — ngày)
-## 3. Ví dụ thật                       (link, kênh, ngày đăng, vì sao minh hoạ được ý)
-## 4. Số liệu dùng được               (số — nguồn — thời điểm số)
-## 5. Góc nhìn ngược / sai lầm phổ biến
-## 6. Người xem đang hỏi gì            (trích comment, link)
-## 7. [chưa chắc]                      (ý tự suy ra)
-## 8. Không tìm được
+# Research tuần <ww>/<yyyy>
+## 1. Trend đang lên trên TikTok VN liên quan content / marketing / creator (dẫn chứng)
+## 2. Người xem đang quan tâm / hỏi gì (trích comment, link)
+## 3. Đối thủ: video nổi bật tuần (link, ngày, views lúc xem, chủ đề, format, kiểu hook)
+## 4. Idea hay ho (mỗi idea: vì sao, dẫn chứng, hợp pillar nào)
+## 5. Keyword / hashtag đang được dùng nhiều trong ngách (dẫn chứng, không bịa lượt xem)
+## 6. [chưa chắc]
+## 7. Không tìm được
 ```
-Xong → cập nhật thẻ, báo Content.
 
-## `/research-thi-truong` — 2 tuần một lần (Thứ 5 tuần 2 của sprint)
-File ra: `02_research/thi_truong_<yyyymmdd>.md`
+## `/research-thang` — ngày ~25
+File ra: `02_research/thang_<yyyy-mm>.md`. Gom 3–4 báo cáo tuần + quét bổ sung:
+xu hướng cả tháng · chủ đề lặp lại nhiều kênh · khoảng trống (người xem hỏi mà chưa ai làm tốt) · đối thủ thay đổi gì · 10–15 idea xếp theo mức có bằng chứng · keyword/hashtag chủ lực · không tìm được.
 
-1. **Đối thủ.** Danh sách theo dõi ở `02_research/doi_thu.md`. Lần đầu chưa có: đề xuất 5–10 kênh TikTok tiếng Việt cùng chủ đề (kiến thức content / marketing / creator), mỗi kênh có link + lý do, đặt thẻ `CHO_CEO`. Chỉ theo dõi danh sách CEO đã duyệt.
-2. Mỗi đối thủ, trong 2 tuần qua: các video nổi bật nhất (link, ngày, views lúc xem), chủ đề, format, kiểu hook, độ dài.
-3. **Người xem quan tâm gì:** chủ đề lặp lại ở nhiều kênh, câu hỏi lặp lại trong comment, xu hướng/âm thanh/format đang lên trên TikTok VN — mỗi ý có dẫn chứng.
-4. **Khoảng trống:** chủ đề người xem hỏi mà chưa ai làm tốt.
-5. **Đề xuất topic cho sprint sau** (5–10), mỗi topic gắn bằng chứng ở mục 2–4.
-6. Không tìm được.
-Thêm link vào Sheet (Kho link + Báo cáo qua Manager), báo CEO 5 dòng.
+Xong mỗi báo cáo: thẻ việc → Manager, link vào Kho link, báo CEO 5 dòng.
+
+## Bài học từ CEO
+
+Chỉ thêm dòng khi CEO bảo "ghi". Định dạng: `- yyyy-mm-dd: <bài học>`

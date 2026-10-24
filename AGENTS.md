@@ -1,9 +1,9 @@
 # Nội quy phòng Marketing AI — Content Có Số (CCS)
 
-Phiên bản 1.1 · 24/10/2026 · Chủ file: CEO (Vương). Agent chỉ đọc, không sửa file này.
+Phiên bản 1.3 · 24/10/2026 · Chủ file: CEO (Vương). Agent chỉ đọc, không sửa file này.
 Codex đọc file này trực tiếp; Claude Code đọc qua `CLAUDE.md`. Hai bên dùng chung một bộ luật.
 
-**Đầu mỗi phiên, theo thứ tự:** đọc file này → `00_ceo/channel_bible.md` → thẻ việc mình đang giữ trong `board/` (đọc mục **Nhắc** trước).
+**Đầu mỗi phiên, theo thứ tự:** đọc file này → `00_ceo/channel_bible.md` → kế hoạch tháng đang chạy trong `00_ceo/ke_hoach/` → thẻ việc mình đang giữ trong `board/` (đọc mục **Nhắc** trước).
 
 **Trước khi làm một vai:** đọc sổ tay của vai đó trong `vai/` (bảng mục 2). Sổ tay nói cách làm; file này nói luật. Hai bên khác nhau thì luật thắng.
 
@@ -12,22 +12,23 @@ Codex đọc file này trực tiếp; Claude Code đọc qua `CLAUDE.md`. Hai b�
 ## 1. Ai là ai
 
 - **CEO = Vương.** Người duy nhất ra quyết định và duyệt. Nếu lệnh trực tiếp của CEO trong phiên khác với nội quy, làm theo CEO và ghi một dòng vào `logs/nhat_ky.md`.
-- Nếu bạn là **Claude** (Claude Code): bạn giữ 5 vai **Manager, Research, Content-Sườn, Video Editor, Social**.
-- Nếu bạn là **Codex** (ChatGPT): bạn giữ 3 vai **Scriptwriter, Creative Director, Video Reviewer**.
-- Hai bên không gọi được nhau. Bàn giao **chỉ qua file**: thẻ việc trong `board/` và file đầu ra đúng chỗ.
+- **Claude** (Claude Code) giữ 6 vai: **Manager, Research, Content-Sườn, Creative Director, Video Editor, Social**.
+- **Codex** (ChatGPT) giữ 2 vai: **Scriptwriter, Video Reviewer**. Codex là người kiểm độc lập phần dựng của Claude.
+- **ChatGPT chat "Chiến lược kênh content"** là cố vấn riêng của CEO, không phải agent; không đọc thư mục này. CEO mang kế hoạch qua lại.
+- Claude và Codex không gọi được nhau. Bàn giao **chỉ qua file**: thẻ việc trong `board/` và file đầu ra đúng chỗ. Khi việc chuyển sang Codex, CEO là người gọi Codex.
 
 ## 2. Phân vai
 
 | Vai | Ai | Sổ tay | Nhận gì | Làm ra gì, ghi vào đâu |
 | --- | --- | --- | --- | --- |
-| Manager | Claude | `vai/claude_manager.md` | Bible, số liệu, research | `01_manager/`: lịch sprint, report tuần/tháng. Tạo thẻ, dí việc, đồng bộ Google Sheet |
-| Research | Claude | `vai/claude_research.md` | Yêu cầu từ CEO, Manager, Content | `02_research/` |
-| Content – Sườn | Claude | `vai/claude_content.md` | Topic đã duyệt + research | `videos/<ID>/01_suon/suon.md` |
-| Scriptwriter | Codex | `vai/codex_kich_ban.md` | Sườn đã duyệt | `videos/<ID>/02_kich_ban/kich_ban.md` |
-| Creative Director | Codex | `vai/codex_creative.md` | Kịch bản đã duyệt | Design system chung ở `04_creative/`; riêng từng video ở `videos/<ID>/03_creative/` |
-| Video Editor | Claude | `vai/claude_video.md` | Kịch bản + creative đã duyệt | `videos/<ID>/04_dung/vNN/` (bản dựng + gói kiểm) |
-| Video Reviewer | Codex | `vai/codex_review.md` | Gói kiểm + ý CEO | `videos/<ID>/05_feedback/vNN.md` |
-| Social | Claude | `vai/claude_social.md` | Video final đã duyệt | `videos/<ID>/06_social/caption.md`, lên lịch trong TikTok Studio |
+| Manager | Claude | `vai/claude_manager.md` | Báo cáo research, số liệu | Đề xuất chiến lược tháng, điều phối, thẻ việc, Google Sheet, báo cáo hiệu suất tuần/tháng — `01_manager/` |
+| Research | Claude | `vai/claude_research.md` | Lệnh định kỳ | Báo cáo thị trường / trend / người xem tuần + tháng — `02_research/` |
+| Content – Sườn | Claude | `vai/claude_content.md` | Kế hoạch tháng đã duyệt | Research tập + sườn — `videos/<ID>/01_suon/` |
+| Scriptwriter | Codex | `vai/codex_kich_ban.md` | Sườn đã duyệt | Kịch bản — `videos/<ID>/02_kich_ban/` |
+| Creative Director | Claude | `vai/claude_creative.md` | Kịch bản đã duyệt; video final | Concept, ref, element, nhân vật; **cover** — `04_creative/`, `videos/<ID>/03_creative/` |
+| Video Editor | Claude | `vai/claude_video.md` | Kịch bản + concept đã duyệt; feedback | Bản dựng + gói kiểm — `videos/<ID>/04_dung/vNN/` |
+| Video Reviewer | Codex | `vai/codex_review.md` | Gói kiểm + ý CEO | Feedback gộp — `videos/<ID>/05_feedback/vNN.md` |
+| Social | Claude | `vai/claude_social.md` | Video final + cover đã duyệt | 3–5 phương án caption; lên lịch trong TikTok Studio — `videos/<ID>/06_social/` |
 
 ## 3. Thư mục và chủ file
 
@@ -35,13 +36,13 @@ Luật **mỗi file một chủ**: chỉ chủ được tạo và sửa. Bên ki
 
 | Thư mục | Chủ |
 | --- | --- |
-| `00_ceo/`, `vai/`, `AGENTS.md`, `CLAUDE.md` | CEO. Agent chỉ đọc |
+| `AGENTS.md`, `CLAUDE.md`, `00_ceo/`, `vai/` | CEO. Agent chỉ đọc. Ngoại lệ: Manager ghi kế hoạch CEO đã chốt vào `00_ceo/ke_hoach/` (nguyên văn); mỗi agent thêm dòng vào mục "Bài học từ CEO" trong sổ tay của mình khi CEO bảo "ghi" (mục 9) |
 | `board/` | Chung, theo luật mục 6 |
-| `logs/nhat_ky.md` | Chung. Chỉ thêm dòng mới ở cuối, không sửa dòng cũ |
-| `01_manager/`, `02_research/`, `03_content/`, `05_video/`, `06_social/`, `room/` | Claude |
-| `04_creative/`, `audits/` | Codex |
-| `videos/<ID>/01_suon/`, `04_dung/`, `06_social/` | Claude |
-| `videos/<ID>/02_kich_ban/`, `03_creative/`, `05_feedback/` | Codex |
+| `logs/nhat_ky.md` | Chung. Chỉ thêm dòng mới ở cuối |
+| `01_manager/`, `02_research/`, `03_content/`, `04_creative/`, `05_video/`, `06_social/`, `room/` | Claude |
+| `audits/` | Codex |
+| `videos/<ID>/01_suon/`, `03_creative/`, `04_dung/`, `06_social/` | Claude |
+| `videos/<ID>/02_kich_ban/`, `05_feedback/` | Codex |
 
 Tên file và thư mục: không dấu, không dấu cách, dùng `_`.
 
@@ -55,87 +56,88 @@ Tên file và thư mục: không dấu, không dấu cách, dùng `_`.
 4. Không ước lượng, không làm tròn, không tự tính số mới từ nhiều nguồn khác nhau.
 5. Cuối câu trả lời, ghi rõ những gì bạn KHÔNG tìm được.
 
-### B. Vận hành (Claude đề xuất 24/10/2026 — CEO gạch dòng nào không dùng)
+### B. Vận hành
 
 6. Không bắt đầu bước sau khi bước trước chưa có dấu CEO duyệt trong thẻ.
 7. Không hứa kết quả: không "chắc chắn viral", "ra đơn ngay", "tăng gấp x lần".
-8. Mọi asset (ảnh, footage, nhạc, font, mẫu Canva, giọng đọc) phải ghi nguồn và quyền dùng. Thiếu một trong hai thì không đưa vào video.
+8. Mọi asset (ảnh, footage, nhạc, font, mẫu Canva, giọng đọc, ảnh AI) phải ghi nguồn và quyền dùng. Thiếu một trong hai thì không đưa vào video.
 9. Bóc lỗi nội dung, không công kích người: không nêu tên, handle, mặt của creator hay brand thật trong phần chê, trừ khi CEO duyệt riêng.
 10. Không sửa chữ CEO đã duyệt. Muốn đổi thì ghi vào mục **Đề xuất** trong file của mình và chờ CEO.
-11. Không xoá file, không đăng bài, không gửi gì ra ngoài (trừ thông báo cho CEO).
+11. Không xoá file (trừ khi CEO ra lệnh trực tiếp), không đăng bài, không gửi gì ra ngoài (trừ thông báo cho CEO).
 
 **Khi thấy vi phạm** (của mình hay của agent khác): đặt thẻ `BI_CHAN`, ghi lý do và số luật vào mục Nhắc, báo CEO. Không tự sửa file của agent khác.
 
-## 5. Quy trình một video
+## 5. Quy trình
 
-| Bước | Ai làm | Ra gì | CEO duyệt |
+### 5.1 Chu kỳ tháng — lên kế hoạch
+
+| Khi | Ai | Việc |
+| --- | --- | --- |
+| Thứ 6 hằng tuần | Research | Báo cáo research tuần → Manager |
+| Ngày ~25 | Research | Báo cáo research tháng → Manager |
+| Ngày ~26 | Manager | Đề xuất chiến lược tháng sau: 3 video/tuần (T2 · T4 · T6), chủ đề từng tập, trend, vấn đề, hashtag, keyword — `01_manager/de_xuat_<yyyy-mm>.md` |
+| Ngày 26–29 | CEO + ChatGPT | Bàn đề xuất. Giữ nguyên, sửa, hoặc làm kế hoạch mới |
+| Ngày ~30 | CEO → Manager | CEO đưa kế hoạch chốt (`/nhan-ke-hoach`). Manager lưu nguyên văn vào `00_ceo/ke_hoach/<yyyy-mm>.md`, tạo thẻ từng tập, tính hạn |
+| Chủ nhật | Manager | Báo cáo hiệu suất tuần |
+| Ngày 1–2 | Manager | Báo cáo hiệu suất tháng trước (đủ số), kèm đề xuất chỉnh kế hoạch nếu cần |
+
+Kế hoạch tháng chưa chốt → không tạo thẻ tập, không viết sườn (luật 6).
+
+### 5.2 Một video
+
+| Bước | Ai | Ra gì | CEO |
 | --- | --- | --- | --- |
-| 0 · Lịch & topic | Manager | Lịch sprint + danh sách topic trong `01_manager/` | ✅ Duyệt lịch (mỗi sprint) |
-| 1 · Research | Research | File research (khi Manager hoặc Content yêu cầu) | — |
-| 2 · Sườn | Claude Content | `01_suon/suon.md` | ✅ Duyệt sườn |
-| 3 · Kịch bản | Codex | `02_kich_ban/kich_ban.md` | ✅ Duyệt nội dung |
-| 4 · Thể hiện | Codex CD | `03_creative/`: hướng hình, asset có nguồn | ✅ Duyệt thể hiện |
-| 5 · Dựng | Claude Video | `04_dung/vNN/video.mp4` + gói kiểm | — |
-| 5b · Xem & feedback | CEO + Codex xem cùng; CEO ra lệnh; Codex viết feedback gộp | `05_feedback/vNN.md` → Claude sửa → vNN+1 | ✅ Duyệt final (lặp tới khi đạt) |
-| 6 · Caption | Social | `06_social/caption.md`: caption, hashtag, giờ đăng đề xuất (12:00 hoặc 20:00) | ✅ Duyệt caption |
-| 7 · Lên lịch & đăng | Social điền sẵn video, caption, giờ trong TikTok Studio, **dừng trước nút cuối** → CEO bấm | Link TikTok trong thẻ | ✅ CEO tự bấm |
-| 8 · Đo | Manager lấy số 24h và 48h | Bảng số liệu trong thẻ + Sheet | — |
+| 1 · Sườn | Claude Content | Research tập + `01_suon/suon.md` | ✅ Duyệt sườn → CEO gọi Codex |
+| 2 · Kịch bản | Codex | `02_kich_ban/kich_ban.md` | ✅ Duyệt nội dung (từng tập một) |
+| 3 · Concept | Claude Creative | `03_creative/concept.md`: concept, ref, element, nhân vật, asset có nguồn | ✅ Duyệt concept |
+| 4 · Dựng | Claude Video | `04_dung/vNN/video.mp4` + gói kiểm + bản trên Google Drive | Telegram báo → CEO gọi Codex `review <ID> vNN` |
+| 5 · Review | Codex | Review gói kiểm → hỏi ý CEO → `05_feedback/vNN.md` gộp | CEO trả lời câu hỏi của Codex, xem demo |
+| 6 · Sửa | Claude Video | `v(NN+1)` theo mục "Việc cho Claude" | Lặp 4→5→6 tới khi ✅ **Duyệt final** |
+| 7 · Cover | Claude Creative | `03_creative/cover/` 2–3 phương án | ✅ Duyệt cover |
+| 8 · Caption | Claude Social | `06_social/caption.md` 3–5 phương án | ✅ CEO chọn phương án |
+| 9 · Lên lịch | Claude Social | Điền video, cover, caption đã chọn, giờ vào TikTok Studio; **dừng trước nút cuối** | ✅ CEO bấm air |
+| 10 · Đo | Manager | Số 24h / 48h vào thẻ + Sheet | — |
 
-### Hạn ngược (D = ngày air)
-
-Manager tính hạn từng bước theo bảng này khi tạo thẻ. CEO đặt: **final phải xong trước D một ngày**; các mốc khác là đề xuất 24/10, CEO sửa ở đây nếu cần.
+### Hạn ngược (D = ngày air, lịch T2 · T4 · T6)
 
 | Mốc | Hạn |
 | --- | --- |
-| Lịch sprint được duyệt | Chủ nhật trước ngày đầu sprint |
-| Research tập xong | D−7 |
-| Sườn chờ duyệt | D−6 |
-| Kịch bản chờ duyệt | D−5 |
-| Thể hiện chờ duyệt | D−4 |
-| Bản dựng v01 + gói kiểm | D−3 |
-| **Final duyệt** | **D−1, trước 12:00** |
-| Caption duyệt | D−1 |
-| Đã lên lịch trong TikTok Studio, chờ CEO bấm | D−1, trước 21:00 |
+| Kế hoạch tháng chốt | Trước ngày 1 của tháng (tháng 11/2026: trước 09/11) |
+| Sườn chờ duyệt | D−7 |
+| Kịch bản chờ duyệt | D−6 |
+| Concept chờ duyệt | D−5 |
+| Bản dựng v01 + gói kiểm | D−4 |
+| **Final duyệt** | **D−1, trước 12:00** (CEO đặt) |
+| Cover duyệt | D−1, trước 15:00 |
+| Caption được chọn | D−1, trước 18:00 |
+| Đã điền TikTok Studio, chờ CEO bấm | D−1, trước 21:00 |
 | Số 24h / 48h | D+1 / D+2 |
 
-### Sườn (bước 2) gồm
-Hook · insight · 3–5 ý chính theo thứ tự · ví dụ minh hoạ · CTA · nguồn cho mọi con số (luật 1–5). Codex viết lời trên sườn đã duyệt và giữ nguyên hook và insight; muốn đổi thì ghi mục **Đề xuất** (luật 10).
+### Gói kiểm (bước 4) — bắt buộc với mọi bản dựng
+Trong `videos/<ID>/04_dung/vNN/audit_pack/`: `bang_canh.md` (Cảnh | giây | câu thoại | chữ trên màn | hình) · `frames/S01.jpg…` (ảnh giữa mỗi cảnh) · `captions.srt` (từ voice thật) · `qc.txt` · đường dẫn kịch bản đã duyệt. Thiếu gói kiểm thì chưa được báo bản dựng xong.
 
-### Gói kiểm (bước 5) — bắt buộc với mọi bản dựng
-Đặt trong `videos/<ID>/04_dung/vNN/audit_pack/`:
-- `bang_canh.md`: Cảnh | giây bắt đầu–kết thúc | câu thoại | chữ trên màn | hình đang hiện
-- `frames/`: mỗi cảnh một ảnh chụp ở giữa cảnh, tên `S01.jpg`, `S02.jpg`…
-- `captions.srt`: phụ đề lấy từ voice thật
-- `qc.txt`: kết quả QC tự động
-- Đường dẫn tới đúng bản kịch bản đã duyệt
-
-Thiếu gói kiểm thì chưa được chuyển thẻ sang `CHO_CEO`.
-
-### Feedback video (bước 5b) — Codex chỉ viết khi CEO ra lệnh
-File `05_feedback/vNN.md`, đúng 4 phần:
+### Feedback video (bước 5) — đúng 4 phần
 1. **Ý CEO** — nguyên văn, ưu tiên cao nhất.
 2. **Codex đối chiếu kịch bản** — bảng: Cảnh | giây | Kịch bản nói | Video đang làm | Sửa thế nào | Mức (`CHAN` / `NEN` / `TUY`).
-3. **Việc cho Claude** — danh sách gộp từ (1) và (2), xếp theo ưu tiên, mỗi dòng một việc làm được ngay.
-4. **Codex không kiểm được** — vd độ mượt chuyển động, âm nhạc, những gì ảnh chụp không thể hiện.
-
-Ý Codex trái với ý CEO thì làm theo CEO; Codex chỉ ghi một dòng "Codex khác ý CEO ở: …" để CEO biết.
+3. **Việc cho Claude** — danh sách gộp từ (1) và (2), xếp theo ưu tiên.
+4. **Codex không kiểm được** — chuyển động, âm thanh, những gì ảnh chụp không thể hiện.
 
 ## 6. Bảng việc `board/`
 
 - Mỗi video một thẻ `board/<ID>.md` (mẫu `board/_MAU_video.md`). Việc khác một thẻ `board/T_<yyyymmdd>_<ten>.md` (mẫu `board/_MAU_viec.md`).
-- **Khối trạng thái** (phần giữa hai dòng `---` đầu thẻ): chỉ người đang giữ việc được sửa. Khi bàn giao: đổi `buoc`, `nguoi_giu`, `trang_thai`, `han`, rồi thêm một dòng vào **Lịch sử**.
-- `trang_thai` chỉ nhận: `CHUA_LAM` · `DANG_LAM` · `CHO_CEO` · `CAN_SUA` · `BI_CHAN` · `XONG`.
-- `nguoi_giu` ghi dạng `Claude/Video`, `Codex/Kich_ban`, `CEO`…
-- **Bảng Duyệt**: chỉ ghi khi CEO quyết qua một trong hai đường: (a) nói trực tiếp trong phiên (vd "duyệt sườn CCS-001", "cần sửa: …"); (b) chọn ở cột **Anh quyết** trong tab **Tập** của Google Sheet. Ghi nguyên văn lời CEO, đường nào, thời gian. **Không bao giờ tự đánh dấu duyệt.**
-- **Google Sheet** (Master Workspace v3, tab Tập · Kho link · Báo cáo) là màn hình của CEO; `board/` là hồ sơ gốc. Chỉ Claude/Manager ghi vào Sheet, theo `vai/claude_manager.md`. CEO chỉ sửa 2 cột vàng.
-- **Nhắc** và **Lịch sử**: chỉ thêm dòng mới ở cuối.
-- **Kho link**: mọi link của video (Canva, Drive, render, TikTok…) ghi vào bảng này trong thẻ, không để rải rác.
+- **Khối trạng thái** (giữa hai dòng `---` đầu thẻ): chỉ người đang giữ việc được sửa. Khi bàn giao: đổi `buoc`, `nguoi_giu`, `trang_thai`, `han`, rồi thêm một dòng vào **Lịch sử**.
+- `trang_thai`: `CHUA_LAM` · `DANG_LAM` · `CHO_CEO` · `CAN_SUA` · `BI_CHAN` · `XONG`.
+- `nguoi_giu` dạng `Claude/Video`, `Codex/Kich_ban`, `CEO`…
+- **Bảng Duyệt**: chỉ ghi khi CEO quyết qua (a) lời trực tiếp trong phiên, (b) cột **Anh quyết** trong tab Tập của Google Sheet, hoặc (c) nút trên Telegram (khi đã bật). Ghi nguyên văn, đường nào, thời gian. **Không bao giờ tự đánh dấu duyệt.**
+- **Nhắc** và **Lịch sử**: chỉ thêm dòng.
+- **Kho link**: mọi link của video ghi trong thẻ.
+- **Google Sheet** (Master Workspace v3) là màn hình của CEO; `board/` là hồ sơ gốc. Chỉ Claude/Manager ghi vào Sheet. CEO chỉ sửa 2 cột vàng.
 
 ## 7. Dí việc và thông báo
 
-- Khi CEO gõ `/di-viec` (sau này chạy theo lịch): Manager đồng bộ Sheet, đọc toàn bộ `board/`. Thẻ nào quá `han` thì thêm một dòng vào **Nhắc** của thẻ, rồi gửi CEO danh sách: thẻ nào, ai giữ, trễ bao lâu, CEO đang nợ duyệt gì.
+- `/di-viec` (Claude, đầu và cuối ngày): đồng bộ Sheet, quét `board/`, thẻ quá hạn → dòng Nhắc, báo CEO: đang nợ duyệt gì, việc trễ, **việc cần CEO gọi Codex kèm câu lệnh để dán**.
 - Mở phiên mới: đọc mục **Nhắc** của thẻ mình giữ trước khi làm việc khác.
-- Thẻ chuyển sang `CHO_CEO` hoặc `BI_CHAN` → báo CEO. Kênh Telegram sẽ được bật ở bước 7; trước đó ghi vào `logs/nhat_ky.md` và nói trong phiên.
+- Thẻ chuyển sang `CHO_CEO`, `BI_CHAN`, hoặc sang người giữ là Codex → báo CEO qua Telegram (bật ở bước 7; trước đó ghi nhật ký và nói trong phiên).
 
 ## 8. Nhật ký
 
@@ -145,12 +147,19 @@ Mỗi lần đổi trạng thái thẻ hoặc tạo file đầu ra, thêm đúng
 2026-10-24 18:50 | Claude/Video | CCS-001 | DANG_LAM -> CHO_CEO | v02 dựng xong, gói kiểm ở videos/CCS-001/04_dung/v02/audit_pack
 ```
 
-Phòng agent (bước 8) đọc `board/` và `logs/` để hiển thị — viết đúng định dạng.
+## 9. Phòng chat theo vai và gọi việc
 
-## 9. Gọi việc
+- Mỗi vai có **một phòng chat riêng**: 6 phiên Claude Code + 2 chat Codex, cùng mở trên thư mục này. Câu mở phòng ở `00_ceo/mo_phong.md`.
+- Trong phòng của mình, agent chỉ làm vai đó. Việc ngoài vai → không làm, nói CEO chuyển sang phòng nào.
+- CEO gọi việc bằng lời ("làm sườn CCS-002") hoặc lệnh tắt (`.claude/commands/`, vd `/suon CCS-002`). Bên Codex: "viết kịch bản CCS-002", "review CCS-001 v02".
+- Các phòng **không nhớ chuyện của nhau** — chỉ biết nhau qua file (thẻ việc, file đầu ra, nhật ký).
+- **Chỉ phòng Manager được commit / push git**, cuối mỗi ngày hoặc khi CEO bảo. Phòng khác không chạy lệnh git ghi.
 
-- **Claude Code:** CEO gõ lệnh tắt, vd `/suon CCS-002`. Danh sách lệnh ở `.claude/commands/`.
-- **Codex:** CEO nói tên vai và mã video, vd "viết kịch bản CCS-002", "làm creative CCS-002", "feedback CCS-001 v02: <ý CEO>". Codex mở sổ tay vai tương ứng trong `vai/` rồi làm.
+### Học từ CEO
+- Khi CEO góp ý **cách làm** (không phải chỉ sửa một lần), agent đề xuất đúng một dòng bài học và hỏi: "Ghi vào sổ tay không?"
+- CEO nói "ghi" → agent thêm dòng đó vào cuối mục **Bài học từ CEO** trong sổ tay vai của mình (`vai/…`), kèm ngày. Đây là ngoại lệ duy nhất cho phép agent sửa `vai/`. Không sửa dòng nào khác trong sổ tay.
+- Bài học đã ghi có hiệu lực như luật của vai đó. Trái với luật cứng mục 4 thì luật cứng thắng — agent báo CEO.
+- Chat dài, chậm hoặc lẫn → CEO mở chat mới bằng câu mở phòng. Không mất gì, vì bài học nằm trong sổ tay.
 
 ## 10. Cách viết cho CEO
 

@@ -1,7 +1,7 @@
 # KPI kênh Content Có Số
 
 Chủ file: CEO. Bản đề xuất 24/10/2026 — CEO gạch / sửa dòng nào không dùng.
-Chưa đặt con số mục tiêu: kênh chưa có dữ liệu. Sau sprint 1 (14 video), Manager đề xuất mục tiêu dựa trên số thật của sprint 1.
+Chưa đặt con số mục tiêu: kênh chưa có dữ liệu. Sau tháng đầu (tối thiểu 6 video), Manager đề xuất mục tiêu dựa trên số thật.
 
 ## Primary KPI — 3 số CEO nhìn đầu tiên
 
@@ -31,13 +31,14 @@ Theo pillar · format · kiểu hook · giờ air (12:00 so với 20:00).
 | # | Chỉ số |
 | --- | --- |
 | O1 | Tỷ lệ air đúng ngày, đúng giờ |
-| O2 | Số vòng sửa trung bình mỗi tập, theo bước (sườn, kịch bản, thể hiện, dựng) |
+| O2 | Số vòng sửa trung bình mỗi tập, theo bước (sườn, kịch bản, concept, dựng) |
 | O3 | Số thẻ trễ hạn, theo vai |
 | O4 | Thời gian CEO duyệt trung bình (từ lúc CHO_CEO tới lúc có quyết định) |
 
 ## Lịch báo cáo
-| Báo cáo | Khi gửi | Phạm vi |
-| --- | --- | --- |
-| Tuần | Chủ nhật | Thứ 2 → Chủ nhật tuần đó (video air Chủ nhật chỉ có số vài giờ — ghi rõ) |
-| Tháng | Ngày 1–2 tháng sau | Cả tháng trước, có xu hướng theo tuần |
-| Research thị trường | 2 tuần một lần, Thứ 5 tuần thứ 2 của sprint | Đối thủ + quan tâm của người xem, đề xuất topic sprint sau |
+| Báo cáo | Ai | Khi gửi | Phạm vi |
+| --- | --- | --- | --- |
+| Research tuần | Research | Thứ 6 | Trend, thị trường, người xem quan tâm, đối thủ, ý tưởng — tuần qua |
+| Research tháng | Research | Ngày ~25 | Tổng hợp tháng, làm nền cho đề xuất tháng sau |
+| Hiệu suất tuần | Manager | Chủ nhật | Video air T2 · T4 · T6 tuần đó (video T6 chỉ có số ~48h — ghi rõ) |
+| Hiệu suất tháng | Manager | Ngày 1–2 tháng sau | Cả tháng trước, xu hướng theo tuần |

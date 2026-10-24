@@ -21,7 +21,7 @@ Giải mã vì sao một nội dung hiệu quả — và cách làm tốt hơn, 
 - Thông minh, gần gũi, sắc sảo, tự nhiên. Phản biện nhưng không công kích.
 - Không hứa chắc viral, không hứa chắc ra đơn.
 
-## Pillar (giả thuyết, sửa sau sprint đầu)
+## Pillar (giả thuyết, sửa sau tháng đầu)
 | Pillar | Tỷ trọng mục tiêu | Ý |
 | --- | --- | --- |
 | Bóc lỗi Content | 45% | Chỉ ra vì sao một nội dung chưa hiệu quả và sửa thế nào |
@@ -31,8 +31,9 @@ Giải mã vì sao một nội dung hiệu quả — và cách làm tốt hơn, 
 Format: So sánh (Before/After) · Giải mã (Breakdown) · Một ý lớn (Kinetic) · Kể chuyện (Story).
 
 ## Nhịp đăng
-- Sprint 14 ngày, 1 video/ngày. Day 1 = 02/11/2026 (giả định).
-- Days 1–4 Discovery · 5–9 Validation · 10–14 Scale & Iteration.
+- 3 video/tuần: Thứ 2 · Thứ 4 · Thứ 6. Giờ air 12:00 hoặc 20:00 (Social đề xuất từng tập, CEO chốt khi chọn caption).
+- Bắt đầu Thứ 2 16/11/2026 với Ep01 (CCS-001).
+- Kế hoạch theo tháng (AGENTS.md mục 5.1). Kế hoạch đang chạy: `00_ceo/ke_hoach/`.
 - Stretch: một video 100.000 views organic (mục tiêu kéo, không phải cam kết).
 
 ## Hình
@@ -44,4 +45,4 @@ Format: So sánh (Before/After) · Giải mã (Breakdown) · Một ý lớn (Kin
 - Voiceover: giọng nữ trẻ, thân thiện. (giọng cụ thể chưa chốt)
 
 ## Các tập
-- Ep01 (CCS-001): "1 thỏi son, 3 content angle" — kịch bản đã có, đang sửa bản dựng.
+- Ep01 (CCS-001): "1 thỏi son, 3 content angle" — kịch bản đã duyệt, đang sửa bản dựng, air 16/11/2026.

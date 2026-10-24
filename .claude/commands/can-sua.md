@@ -1,6 +1,6 @@
 ---
 description: CEO yêu cầu sửa một bước của một tập
-argument-hint: <ID> <điểm: suon|noi-dung|the-hien|final|caption> <ý CEO>
+argument-hint: <ID> <điểm: suon|noi-dung|concept|final|cover|caption> <ý CEO>
 ---
 CEO yêu cầu sửa: $ARGUMENTS
 
