@@ -14,3 +14,6 @@ node_modules/
 
 # Gói kiểm (audit_pack/) luôn được đưa lên, kể cả file media bên trong
 !**/audit_pack/**
+
+# Tài liệu thô trên máy — không đưa lên repo public
+tailieu-kenhAI/
