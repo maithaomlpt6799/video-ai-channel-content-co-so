@@ -1,0 +1,16 @@
+# Media nặng — không đưa lên repo
+*.mp4
+*.mov
+*.mp3
+*.wav
+*.m4a
+
+# Thư viện và bí mật
+node_modules/
+.env
+
+# Rác macOS
+.DS_Store
+
+# Gói kiểm (audit_pack/) luôn được đưa lên, kể cả file media bên trong
+!**/audit_pack/**
